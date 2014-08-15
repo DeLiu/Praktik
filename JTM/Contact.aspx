@@ -1,17 +1,16 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
+    <h2>Kontakt JTM-Landbrug</h2>
+    <h3>Hvis du ønsker at kontakte JTM-Landbrug, kan du benytte følgende oplysninger nedenfor:</h3>
     <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
+        <!--TODO: måske nogle rigtige adresser til salg osv, som f.eks. salg@jtm-landbrug.dk og partner@jtm-landbrug.dk -->
+        <strong>Salg:</strong>   <a href="mailto:test@testtesttest.com">test@testtesttest.com</a><br />
     </address>
-
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        Saksmosevej 15<br />
+        7300, Jelling<br />
+        <abbr title="Telefon">Tlf:</abbr>
+        71201113
     </address>
 </asp:Content>
