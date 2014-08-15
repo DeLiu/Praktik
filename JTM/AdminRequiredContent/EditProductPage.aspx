@@ -49,10 +49,10 @@
         <br />
         <asp:GridView ID="EditProductGridView" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
             <Columns>
-                <asp:BoundField DataField="graintype" HeaderText="graintype" SortExpression="graintype" />
-                <asp:BoundField DataField="amount" HeaderText="amount" SortExpression="amount" />
-                <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
-                <asp:BoundField DataField="infomation" HeaderText="infomation" SortExpression="infomation" />
+                <asp:BoundField DataField="graintype" HeaderText="Korntype" SortExpression="graintype" />
+                <asp:BoundField DataField="amount" HeaderText="Mængde" SortExpression="amount" />
+                <asp:BoundField DataField="price" HeaderText="Pris" SortExpression="price" />
+                <asp:BoundField DataField="infomation" HeaderText="Information" SortExpression="infomation" />
             </Columns>
         </asp:GridView>
 
