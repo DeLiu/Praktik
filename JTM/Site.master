@@ -80,7 +80,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - JTM Landbrug</p>
+                <p>&copy; <%: DateTime.Now.Year %> - JTM-Landbrug</p>
             </footer>
         </div>
     </form>
