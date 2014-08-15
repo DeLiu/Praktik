@@ -11,4 +11,8 @@ public partial class AdminRequiredContent_EditProductPage : System.Web.UI.Page
     {
 
     }
+    protected void confirmButton_Click(object sender, EventArgs e)
+    {
+
+    }
 }
