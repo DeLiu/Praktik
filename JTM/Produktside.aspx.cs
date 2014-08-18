@@ -7,15 +7,17 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 public partial class Produktside : System.Web.UI.Page
 {
-    SQLDatabase DB = new SQLDatabase("JTM-Landbrug", "LocalDb", "admin", "1234");
-
+    SQLDatabase DB = new SQLDatabase("JTM.mdf", "LocalDB", "", "");
+    
     protected void Page_Load(object sender, EventArgs e)
     {
         DB.Open();
         string[][] getData = DB.Query("SELECT * FROM productinfo");
+        content12.InnerHtml = "";
         for (int i = 0; i < getData.Length; i++)
         {
-            content12.InnerHtml = "<p>" + getData[0][i] + "</p>";
+              content12.InnerHtml += "<p>" + getData[i][1] + i + "</p>";  
+                    
         }
         DB.Close();
     }
