@@ -24,10 +24,6 @@
                 <td class="alignRight"><label runat="server">Produktsnavn: </label></td>
                 <td><asp:TextBox ID="navnTextbox" runat="server"></asp:TextBox></td>
             </tr>
-            <tr>
-                <td class="alignRight"><label title="Indtast produktets type." runat="server">Produktstype: </label></td>
-                <td><asp:TextBox ID="typeTextbox" runat="server"></asp:TextBox></td>
-            </tr>
                 <tr>
                     <td class="alignRight"><label runat="server">Mængde: </label></td>
                     <td><asp:TextBox ID="amountTextBox" runat="server"></asp:TextBox></td>
@@ -49,6 +45,7 @@
         <br />
         <asp:GridView ID="EditProductGridView" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
             <Columns>
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="graintype" HeaderText="Korntype" SortExpression="graintype" />
                 <asp:BoundField DataField="amount" HeaderText="Mængde" SortExpression="amount" />
                 <asp:BoundField DataField="price" HeaderText="Pris" SortExpression="price" />
