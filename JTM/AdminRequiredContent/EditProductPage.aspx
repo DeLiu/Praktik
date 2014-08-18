@@ -43,17 +43,6 @@
                 </tr>
             </table>
         <br />
-        <asp:GridView ID="EditProductGridView" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="graintype" HeaderText="Korntype" SortExpression="graintype" />
-                <asp:BoundField DataField="amount" HeaderText="Mængde" SortExpression="amount" />
-                <asp:BoundField DataField="price" HeaderText="Pris" SortExpression="price" />
-                <asp:BoundField DataField="infomation" HeaderText="Information" SortExpression="infomation" />
-            </Columns>
-        </asp:GridView>
-
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProductDBString %>" SelectCommand="SELECT [graintype], [amount], [price], [infomation] FROM [productinfo]"></asp:SqlDataSource>
 
     </div>
     </form>
