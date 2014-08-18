@@ -42,16 +42,6 @@
 
                 </tr>
             </table>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="JTMProduct">
-            <Columns>
-                <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField DataField="productname" HeaderText="productname" SortExpression="productname" />
-                <asp:BoundField DataField="amount" HeaderText="amount" SortExpression="amount" />
-                <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
-                <asp:BoundField DataField="info" HeaderText="info" SortExpression="info" />
-            </Columns>
-        </asp:GridView>
-        <asp:SqlDataSource ID="JTMProduct" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [productname], [amount], [price], [info] FROM [productinfo]"></asp:SqlDataSource>
         <br />
 
     </div>
