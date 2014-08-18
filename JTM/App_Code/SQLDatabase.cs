@@ -27,7 +27,7 @@ public class SQLDatabase
     {
         try
         {
-            this.dbConn = new SqlConnection(@"Data Source=(" + this.dbServer + "); Initial Catalog=" + this.dbNavn + "; Integrated Security=SSPI");
+            this.dbConn = new SqlConnection(@"Data Source=(" + this.dbServer + ")\v11.0; AttachDbFilename=|DataDirectory|\"" + this.dbNavn + "; Integrated Security=SSPI");
             this.dbConn.Open();
 
             return true;
