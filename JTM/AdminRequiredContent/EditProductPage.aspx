@@ -37,7 +37,7 @@
                 <td><asp:TextBox ID="prisTextbox" runat="server" TextMode="Number"></asp:TextBox></td>
             </tr>
             <tr>
-                <td class="alignRight"><label title="Eventuelt indtast produktbeskrivelse" runat="server">Beskrivelse: </label></td>
+                <td class="alignRight"><label title="Eventuelt indtast produktbeskrivelse" runat="server">Information: </label></td>
                 <td><asp:TextBox ID="infoTextbox" runat="server" Height="150px" TextMode="MultiLine" Width="100%"></asp:TextBox></td>
             </tr>
                 <tr>
