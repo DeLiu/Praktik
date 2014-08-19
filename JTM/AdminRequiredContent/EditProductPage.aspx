@@ -38,7 +38,7 @@
             </tr>
                 <tr>
                     <td></td>
-                    <td><asp:Button ID="confirmButton" runat="server" Text="Bekræft" OnClick="confirmButton_Click"/></td>
+                    <td><asp:Button ID="confirmButton" runat="server" Text="Bekræft" OnClick="confirm_Button_Click"/></td>
 
                 </tr>
             </table>
