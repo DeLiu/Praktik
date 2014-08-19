@@ -42,16 +42,35 @@
 
                 </tr>
             </table>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="JTMProduct">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="JTMProduct" AllowSorting="True" DataKeyNames="productid" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
+                <asp:BoundField DataField="productid" HeaderText="productid" InsertVisible="False" ReadOnly="True" SortExpression="productid" />
                 <asp:BoundField DataField="productname" HeaderText="productname" SortExpression="productname" />
                 <asp:BoundField DataField="amount" HeaderText="amount" SortExpression="amount" />
                 <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
                 <asp:BoundField DataField="info" HeaderText="info" SortExpression="info" />
             </Columns>
         </asp:GridView>
-        <asp:SqlDataSource ID="JTMProduct" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [productname], [amount], [price], [info] FROM [productinfo]"></asp:SqlDataSource>
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:SqlDataSource ID="JTMProduct" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [productinfo]" DeleteCommand="DELETE FROM [productinfo] WHERE [productid] = @productid" InsertCommand="INSERT INTO [productinfo] ([productname], [amount], [price], [info]) VALUES (@productname, @amount, @price, @info)" UpdateCommand="UPDATE [productinfo] SET [productname] = @productname, [amount] = @amount, [price] = @price, [info] = @info WHERE [productid] = @productid">
+            <DeleteParameters>
+                <asp:Parameter Name="productid" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="productname" Type="String" />
+                <asp:Parameter Name="amount" Type="Double" />
+                <asp:Parameter Name="price" Type="Double" />
+                <asp:Parameter Name="info" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="productname" Type="String" />
+                <asp:Parameter Name="amount" Type="Double" />
+                <asp:Parameter Name="price" Type="Double" />
+                <asp:Parameter Name="info" Type="String" />
+                <asp:Parameter Name="productid" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
         <br />
 
     </div>

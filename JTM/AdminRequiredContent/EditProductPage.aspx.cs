@@ -35,4 +35,9 @@ public partial class AdminRequiredContent_EditProductPage : System.Web.UI.Page
         //content12.InnerHtml += "<p>" + getData[i][1] + i + "</p>";
         DB.Close();
     }
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string myString = GridView1.SelectedRow.Cells[1].Text.ToString();
+        TextBox1.Text = myString;
+    }
 }
