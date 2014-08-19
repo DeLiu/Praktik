@@ -12,8 +12,8 @@
         <header><h3>Velkommen til forumet</h3></header>
         <nav>
             <ul>
-                <li><a href="Generel%20Diskusion.aspx">Generel Diskusion.aspx</a>Generel Diskusion</li>
-                <li><a href="Økologi%20og%20Landbrug.aspx">Økologi og Landbrug.aspx</a>Økologi og Landbrug</li>
+                <li><a href="Generel%20Diskussion.aspx">Generel diskussion</a></li>
+                <li><a href="Økologi%20og%20Landbrug.aspx">Økologi og landbrug</a></li>
             </ul>
         </nav>
    

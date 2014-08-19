@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Generel Diskusion.aspx.cs" Inherits="Forum_Generel_Diskusion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Generel Diskussion.aspx.cs" Inherits="Forum_Generel_Diskussion" %>
 
 <!DOCTYPE html>
 
