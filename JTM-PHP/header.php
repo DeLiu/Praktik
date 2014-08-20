@@ -11,14 +11,14 @@
 <h1>JTM-Landbrug - Forum</h1>
     <div id="wrapper">
     <div id="menu">
-        <a class="item" href="/forum/index.php">Hjem</a> -
-        <a class="item" href="/forum/create_topic.php">Opret en tråd</a> -
-        <a class="item" href="/forum/create_cat.php">Opret en kategori</a>
+        <a class="item" href="index.php">Hjem</a> -
+        <a class="item" href="create_topic.php">Opret en tråd</a> -
+        <a class="item" href="create_cat.php">Opret en kategori</a>
          
         <div id="userbar">
         <?php
 			echo '<div id="userbar">';
-				if($_SESSION['signed_in'])
+				if(isset($_SESSION['signed_in']))
 				{
 					echo 'Velkommen' . $_SESSION['user_name'] . '. Ikke dig? <a href="signout.php">Log ud</a>';
 				}

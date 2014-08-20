@@ -46,7 +46,6 @@ else
 
 <?php
 include 'connect.php';
-include 'header.php';
  
 $sql = "SELECT
             cat_id,
@@ -89,16 +88,13 @@ else
         }
     }
 }
- 
-include 'footer.php';
 ?>
 
 <?php
 include 'connect.php';
-include 'header.php';
  
 echo '<h2>Create a topic</h2>';
-if($_SESSION['signed_in'] == false)
+if (isset($_SESSION['signed_in']) == false)
 {
     //the user is not signed in
     echo 'Sorry, you have to be <a href="/forum/signin.php">signed in</a> to create a topic.';
@@ -233,9 +229,7 @@ else
 }
 ?>
 <?php
-//create_cat.php
 include 'connect.php';
-include 'header.php';
  
 //first select the category based on $_GET['cat_id']
 $sql = "SELECT
@@ -314,14 +308,11 @@ else
         }
     }
 }
- 
-include 'footer.php';
 ?>
 
 <?php
 //create_cat.php
 include 'connect.php';
-include 'header.php';
  
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
