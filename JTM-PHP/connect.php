@@ -6,10 +6,11 @@ $database   = 'jonodense_dk_db';
  
 if(!mysql_connect($server, $username, $password, $database))
 {
-    exit('Error: could not establish database connection');
+    exit('Fejl: Kunne ikke oprette forbindelse til databasen.');
 }
 if(!mysql_select_db($database))
 {
-    exit('Error: could not select the database');
+    exit('Fejl: Kunne ikke hente ud fra databasen.');
 }
+mysql_query("SET NAMES utf8");
 ?>

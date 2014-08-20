@@ -13,7 +13,7 @@
     <div id="menu">
         <a class="item" href="index.php">Hjem</a> -
         <a class="item" href="create_topic.php">Opret en tråd</a> -
-        <a class="item" href="create_cat.php">Opret en kategori</a>
+        <a class="item" href="create_cat.php">Opret et subforum</a>
          
         <div id="userbar">
         <?php
