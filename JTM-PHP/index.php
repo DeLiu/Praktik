@@ -5,7 +5,7 @@ include 'header.php';
 $sql = "SELECT
             cat_id,
             cat_name,
-            cat_description,
+            cat_description
         FROM
             categories";
  
@@ -13,21 +13,21 @@ $result = mysql_query($sql);
  
 if(!$result)
 {
-    echo 'The categories could not be displayed, please try again later.';
+    echo 'Kategorierne kunne ikke vises, prøv igen senere.';
 }
 else
 {
     if(mysql_num_rows($result) == 0)
     {
-        echo 'No categories defined yet.';
+        echo 'Der er ingen kategorier.';
     }
     else
     {
         //prepare the table
         echo '<table border="1">
               <tr>
-                <th>Category</th>
-                <th>Last topic</th>
+                <th>Kategori</th>
+                <th>Sidste tråd</th>
               </tr>'; 
              
         while($row = mysql_fetch_assoc($result))
@@ -62,20 +62,20 @@ $result = mysql_query($sql);
  
 if(!$result)
 {
-    echo 'The category could not be displayed, please try again later.' . mysql_error();
+    echo 'Kategorien kunne ikke vises, prøv igen senere.' . mysql_error();
 }
 else
 {
     if(mysql_num_rows($result) == 0)
     {
-        echo 'This category does not exist.';
+        echo 'Denne kategori eksisterer ikke.';
     }
     else
     {
         //display category data
         while($row = mysql_fetch_assoc($result))
         {
-            echo '<h2>Topics in ' . $row['cat_name'] . ' category</h2>';
+            echo '<h2>Tråde i ' . $row['cat_name'] . '-subforummet</h2>';
         }
      
         //do a query for the topics
@@ -93,21 +93,21 @@ else
          
         if(!$result)
         {
-            echo 'The topics could not be displayed, please try again later.';
+            echo 'Trådene kunne ikke vises, prøv igen senere.';
         }
         else
         {
             if(mysql_num_rows($result) == 0)
             {
-                echo 'There are no topics in this category yet.';
+                echo 'Der er endnu ingen tråde i dette subforum.';
             }
             else
             {
                 //prepare the table
                 echo '<table border="1">
                       <tr>
-                        <th>Topic</th>
-                        <th>Created at</th>
+                        <th>Tråd</th>
+                        <th>Skabt d.</th>
                       </tr>'; 
                      
                 while($row = mysql_fetch_assoc($result))
@@ -140,7 +140,7 @@ else
     //check for sign in status
     if(!isset($_SESSION['signed_in']))
     {
-        echo 'You must be signed in to post a reply.';
+        echo 'Du skal være logget ind før du kan oprette et indlæg.';
     }
     else
     {
@@ -159,11 +159,11 @@ else
                          
         if(!$result)
         {
-            echo 'Your reply has not been saved, please try again later.';
+            echo 'Dit indlæg kunne ikke gemmes, prøv igen senere.';
         }
         else
         {
-            echo 'Your reply has been saved, check out <a href="topic.php?id=' . htmlentities($_GET['id']) . '">the topic</a>.';
+            echo 'Dit indlæg er gemt, se det <a href="topic.php?id=' . htmlentities($_GET['id']) . '">her</a>.';
         }
     }
 }
