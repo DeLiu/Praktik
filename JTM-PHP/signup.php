@@ -8,12 +8,22 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
     /*the form hasn't been posted yet, display it
       note that the action="" will cause the form to post to the same page it is on */
-    echo '<form method="post" action="">
-        Username: <input type="text" name="user_name" />
-        Password: <input type="password" name="user_pass">
-        Password again: <input type="password" name="user_pass_check">
-        E-mail: <input type="email" name="user_email">
-        <input type="submit" value="Add category" />
+    echo '<table style="width:200px">
+		<tr>
+		<form method="post" action="">
+        <td>Brugernavn: </td><td><input type="text" name="user_name" /></td>
+		</tr>
+		<tr>
+        <td>Adgangskode: </td><td><input type="password" name="user_pass"></td>
+		</tr>
+		<tr>
+        <td>Bekræft adgangskode: </td><td><input type="password" name="user_pass_check"></td>
+		</tr>
+		<tr>
+        <td>E-mail: </td><td><input type="email" name="user_email"></td>
+		</tr>
+		</table>
+        <input type="submit" value="Opret bruger" />
      </form>';
 }
 else
