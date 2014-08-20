@@ -62,13 +62,13 @@ $result = mysql_query($sql);
  
 if(!$result)
 {
-    echo 'Kategorien kunne ikke vises, prøv igen senere.' . mysql_error();
+    echo 'Subforummet kunne ikke vises, prøv igen senere.' . mysql_error();
 }
 else
 {
     if(mysql_num_rows($result) == 0)
     {
-        echo 'Denne kategori eksisterer ikke.';
+        echo 'Dette subforum eksisterer ikke.';
     }
     else
     {
