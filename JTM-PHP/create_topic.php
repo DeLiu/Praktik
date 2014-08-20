@@ -2,11 +2,11 @@
 include 'connect.php';
 include 'header.php';
  
-echo '<h2>Create a topic</h2>';
+echo '<h2>Opret en tråd</h2>';
 if (isset($_SESSION['signed_in']) == false)
 {
     //the user is not signed in
-    echo 'Sorry, you have to be <a href="/forum/signin.php">signed in</a> to create a topic.';
+    echo 'Du skal være <a href="/forum/signin.php">logget ind</a>, før du kan oprette en tråd.';
 }
 else
 {
@@ -36,19 +36,19 @@ else
                 //there are no categories, so a topic can't be posted
                 if($_SESSION['user_level'] == 1)
                 {
-                    echo 'You have not created categories yet.';
+                    echo 'Du har endnu ikke oprettet nogle subforummer.';
                 }
                 else
                 {
-                    echo 'Before you can post a topic, you must wait for an admin to create some categories.';
+                    echo 'Før du kan oprette en tråd, skal du vente på at der oprettes subforummer.';
                 }
             }
             else
             {
          
                 echo '<form method="post" action="">
-                    Subject: <input type="text" name="topic_subject" />
-                    Category:'; 
+                    Emne: <input type="text" name="topic_subject" />
+                    Subforum:'; 
                  
                 echo '<select name="topic_cat">';
                     while($row = mysql_fetch_assoc($result))
@@ -57,8 +57,8 @@ else
                     }
                 echo '</select>'; 
                      
-                echo 'Message: <textarea name="post_content" /></textarea>
-                    <input type="submit" value="Create topic" />
+                echo 'Besked: <textarea name="post_content" /></textarea>
+                    <input type="submit" value="Opret tråd" />
                  </form>';
             }
         }
@@ -130,7 +130,7 @@ else
                     $result = mysql_query($sql);
                      
                     //after a lot of work, the query succeeded!
-                    echo 'You have successfully created <a href="topic.php?id='. $topicid . '">your new topic</a>.';
+                    echo 'Tillykke, her er din nyoprettede <a href="topic.php?id='. $topicid . '">tråd</a>.';
                 }
             }
         }

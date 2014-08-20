@@ -2,7 +2,7 @@
 include 'connect.php';
 include 'header.php';
  
-echo '<h3>Sign up</h3>';
+echo '<h3>Opret en bruger</h3>';
  
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {

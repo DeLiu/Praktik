@@ -6,9 +6,9 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
     //the form hasn't been posted yet, display it
     echo "<form method='post' action=''>
-        Category name: <input type='text' name='cat_name' />
-        Category description: <input type='text' name='cat_description' />
-        <input type='submit' value='Add category' />
+        Subforum-navn: <input type='text' name='cat_name' />
+        Subforum-beskrivelse: <input type='text' name='cat_description' />
+        <input type='submit' value='Tilføj subforum' />
      </form>";
 }
 else
@@ -21,11 +21,11 @@ else
     if(!$result)
     {
         //something went wrong, display the error
-        echo 'Error' . mysql_error();
+        echo 'Fejl:' . mysql_error();
     }
     else
     {
-        echo 'New category successfully added.';
+        echo 'Det nye subforum er nu oprettet.';
     }
 }
 include 'footer.php';
