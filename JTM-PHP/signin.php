@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
 include 'header.php';
- 
+
 echo '<h3>Sign in</h3>';
  
 //first, check if the user is already signed in. If that is the case, there is no need to display this page
@@ -70,7 +70,7 @@ else
             if(!$result)
             {
                 //something went wrong, display the error
-                echo 'Something went wrong while signing in. Please try again later.';
+                echo 'Noget gik galt da du skulle logges ind, prøv igen.';
                 //echo mysql_error(); //debugging purposes, uncomment when needed
             }
             else
@@ -95,7 +95,7 @@ else
                         $_SESSION['user_level'] = $row['user_level'];
                     }
                      
-                    echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="index.php">Fortsæt til forummet</a>.';
+                    echo 'Velkommen, ' . $_SESSION['user_name'] . '. <a href="index.php">fortsæt til forummet</a>.';
                 }
             }
         }

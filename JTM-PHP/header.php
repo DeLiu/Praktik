@@ -17,14 +17,15 @@
          
         <div id="userbar">
         <?php
+		session_start();
 			echo '<div id="userbar">';
 				if(isset($_SESSION['signed_in']))
 				{
-					echo 'Velkommen' . $_SESSION['user_name'] . '. Ikke dig? <a href="signout.php">Log ud</a>';
+					echo 'Velkommen ' . $_SESSION['user_name'] . '. Ikke dig? <a href="signout.php">log ud</a>';
 				}
 				else
 				{
-					echo '<a href="signin.php">Log ind</a> or <a href="signup.php">Opret en bruger</a>.';
+					echo '<a href="signin.php">Log ind</a> eller <a href="signup.php">opret en bruger</a>.';
 				}
 			echo '</div>';
 ?>

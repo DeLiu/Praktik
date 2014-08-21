@@ -6,7 +6,7 @@ echo '<h2>Opret en tråd</h2>';
 if (isset($_SESSION['signed_in']) == false)
 {
     //the user is not signed in
-    echo 'Du skal være <a href="/forum/signin.php">logget ind</a>, før du kan oprette en tråd.';
+    echo 'Du skal være <a href="signin.php">logget ind</a>, før du kan oprette en tråd.';
 }
 else
 {

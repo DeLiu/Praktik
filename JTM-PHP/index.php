@@ -2,13 +2,8 @@
 include 'connect.php';
 include 'header.php';
  
-$sql = "SELECT
-            cat_id,
-            cat_name,
-            cat_description
-        FROM
-            categories";
- 
+$sql = "SELECT * FROM categories";
+
 $result = mysql_query($sql);
  
 if(!$result)
@@ -26,7 +21,7 @@ else
         //prepare the table
         echo '<table border="1">
               <tr>
-                <th>Kategori</th>
+                <th>Subforum</th>
                 <th>Sidste tråd</th>
               </tr>'; 
              
@@ -47,7 +42,7 @@ else
 
 <?php
 include 'connect.php';
- 
+
 //first select the category based on $_GET['cat_id']
 $sql = "SELECT
             cat_id,
@@ -56,7 +51,7 @@ $sql = "SELECT
         FROM
             categories
         WHERE
-            cat_id = " . mysql_real_escape_string($_GET['id']);
+            cat_id = " . mysql_real_escape_string(isset($_GET['id']));
  
 $result = mysql_query($sql);
  
