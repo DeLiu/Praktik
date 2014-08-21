@@ -11,4 +11,11 @@ public partial class AdminRequiredContent_EditLinks : System.Web.UI.Page
     {
 
     }
+    protected void add_button_Click(object sender, EventArgs e)
+    {
+        string urlstring = linkTextBox.Text;
+
+
+        listedLinks.InnerHtml = "<li><asp:HyperLink NavigateUrl='http://tv2.dk'>"+ titleTextBox.Text +"</asp:HyperLink></li>";
+    }
 }
