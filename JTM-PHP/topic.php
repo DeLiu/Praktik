@@ -24,7 +24,7 @@ else
                           post_by) 
                 VALUES ('" . $_POST['reply-content'] . "',
                         NOW(),
-                        " . mysql_real_escape_string($_GET['id']) . ",
+                        " . mysql_real_escape_string(isset($_GET['id'])) . ",
                         " . $_SESSION['user_id'] . ")";
                          
         $result = mysql_query($sql);
@@ -35,7 +35,7 @@ else
         }
         else
         {
-            echo 'Dit indlæg er gemt, se det <a href="topic.php?id=' . htmlentities($_GET['id']) . '">her</a>.';
+            echo 'Dit indlæg er gemt, se det <a href="topic.php?id=' . htmlentities(isset($_GET['id'])) . '">her</a>.';
         }
     }
 }

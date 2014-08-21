@@ -41,7 +41,7 @@ else
                 FROM
                     topics
                 WHERE
-                    topic_cat = " . mysql_real_escape_string($_GET['id']);
+                    topic_cat = " . mysql_real_escape_string(isset($_GET['id']));
          
         $result = mysql_query($sql);
          
