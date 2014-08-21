@@ -18,6 +18,8 @@ public partial class AdminRequiredContent_EditProductPage : System.Web.UI.Page
         DB.Exec("INSERT INTO productinfo (productname, amount, price, info) VALUES ('" + navnTextbox.Text + "', " + amountTextBox.Text + ", " + prisTextbox.Text + ", '" + infoTextbox.Text + "')");
             //content12.InnerHtml += "<p>" + getData[i][1] + i + "</p>";
         DB.Close();
+
+        GridView1.DataBind();
     }
 
     protected void delete_Button_Click(object sender, EventArgs e)
@@ -26,6 +28,8 @@ public partial class AdminRequiredContent_EditProductPage : System.Web.UI.Page
         //DB.Exec("DELETE FROM productinfo WHERE productid='"+produktidTextBox+"'");
         //content12.InnerHtml += "<p>" + getData[i][1] + i + "</p>";
         DB.Close();
+
+        GridView1.DataBind();
     }
 
     protected void edit_Button_Click(object sender, EventArgs e)
@@ -34,10 +38,7 @@ public partial class AdminRequiredContent_EditProductPage : System.Web.UI.Page
         //DB.Exec("UPDATE productinfo SET WHERE productid='"+produktidTextbox+*'");
         //content12.InnerHtml += "<p>" + getData[i][1] + i + "</p>";
         DB.Close();
-    }
-    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        string myString = GridView1.SelectedRow.Cells[1].Text.ToString();
-        TextBox1.Text = myString;
+
+        GridView1.DataBind();
     }
 }
