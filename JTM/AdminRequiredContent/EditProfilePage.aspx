@@ -1,9 +1,16 @@
-﻿<%@ Page Language="C#" Title="Rediger Profil" MasterPageFile="~/AdminRequiredContent/CMS.master" AutoEventWireup="true" CodeFile="EditProfilePage.aspx.cs" Inherits="AdminRequiredContent_EditProfilePage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EditProfilePage.aspx.cs" Inherits="AdminRequiredContent_EditProfilePage" %>
 
-<asp:Content ID="headerContent" runat="server" ContentPlaceHolderID="head">
-    </asp:Content>
-<asp:Content ID="bodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
     <div>
     
     </div>
-</asp:Content>
+    </form>
+</body>
+</html>

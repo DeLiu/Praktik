@@ -1,14 +1,24 @@
-﻿<%@ Page Language="C#" Title="Rediger Produkter" MasterPageFile="~/AdminRequiredContent/CMS.master" AutoEventWireup="true" CodeFile="EditProductPage.aspx.cs" Inherits="AdminRequiredContent_EditProductPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="EditProductPage.aspx.cs" Inherits="AdminRequiredContent_EditProductPage" %>
 
-<asp:Content ID="headerContent" runat="server" ContentPlaceHolderID="head">
-    <link rel="stylesheet" type="text/css" href="CSS/CMS.css" />
-    </asp:Content>
-<asp:Content ID="bodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type ="text/css">
+        .alignRight {text-align : right;
+                     vertical-align : top;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
     <div>
         <h1>Produkter</h1>
             <table style="width: 500px;">
             <tr>
-                <th class="tableHead" colspan="2">Opret Produkt</th>
+                <th colspan="2" style="text-align : left">Opret Produkt</th>
             </tr>
             <tr>
                 <td class="alignRight"><label runat="server">Produktsnavn: </label></td>
@@ -32,15 +42,17 @@
 
                 </tr>
             </table>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="JTMProduct" AllowSorting="True" DataKeyNames="productid">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="JTMProduct" AllowSorting="True" DataKeyNames="productid" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
-                <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="productname" HeaderText="Produktsnavn" SortExpression="productname" />
-                <asp:BoundField DataField="amount" HeaderText="Mængde" SortExpression="amount" />
-                <asp:BoundField DataField="price" HeaderText="Pris" SortExpression="price" />
-                <asp:BoundField DataField="info" HeaderText="Information" SortExpression="info" />
+                <asp:CommandField ShowSelectButton="True" />
+                <asp:BoundField DataField="productid" HeaderText="productid" InsertVisible="False" ReadOnly="True" SortExpression="productid" />
+                <asp:BoundField DataField="productname" HeaderText="productname" SortExpression="productname" />
+                <asp:BoundField DataField="amount" HeaderText="amount" SortExpression="amount" />
+                <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+                <asp:BoundField DataField="info" HeaderText="info" SortExpression="info" />
             </Columns>
         </asp:GridView>
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <asp:SqlDataSource ID="JTMProduct" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [productinfo]" DeleteCommand="DELETE FROM [productinfo] WHERE [productid] = @productid" InsertCommand="INSERT INTO [productinfo] ([productname], [amount], [price], [info]) VALUES (@productname, @amount, @price, @info)" UpdateCommand="UPDATE [productinfo] SET [productname] = @productname, [amount] = @amount, [price] = @price, [info] = @info WHERE [productid] = @productid">
             <DeleteParameters>
                 <asp:Parameter Name="productid" Type="Int32" />
@@ -62,4 +74,6 @@
         <br />
 
     </div>
-</asp:Content>
+    </form>
+</body>
+</html>
