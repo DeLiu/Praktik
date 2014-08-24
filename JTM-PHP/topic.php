@@ -1,41 +1,88 @@
 <?php
+//create_cat.php
 include 'connect.php';
 include 'header.php';
  
-if($_SERVER['REQUEST_METHOD'] != 'POST')
+//first select the category based on $_GET['cat_id']
+$sql = "SELECT
+    topic_id,
+    topic_subject
+	FROM
+		topics
+	WHERE
+		topics.topic_id = " . mysql_real_escape_string(isset($_GET['id']));
+ 
+$result = mysql_query($sql);
+ 
+if(!$result)
 {
-    //someone is calling the file directly, which we don't want
-    echo 'This file cannot be called directly.';
+    echo 'Denne tråd kunne ikke vises. Prøv igen senere.' . mysql_error();
 }
 else
 {
-    //check for sign in status
-    if(!isset($_SESSION['signed_in']))
+    if(mysql_num_rows($result) == 0)
     {
-        echo 'Du skal være logget ind før du kan oprette et indlæg.';
+        echo 'Denne tråd eksisterer ikke.';
     }
     else
     {
-        //a real user posted a real reply
-        $sql = "INSERT INTO 
-                    posts(post_content,
-                          post_date,
-                          post_topic,
-                          post_by) 
-                VALUES ('" . $_POST['reply-content'] . "',
-                        NOW(),
-                        " . mysql_real_escape_string(isset($_GET['id'])) . ",
-                        " . $_SESSION['user_id'] . ")";
-                         
+        //display category data
+        while($row = mysql_fetch_assoc($result))
+        {
+            echo '<h2>Indlæg i ′' . $row['topic_subject'] . '′</h2>';
+        }
+     
+        //do a query for the topics
+        $sql = "SELECT
+				posts.post_topic,
+				posts.post_content,
+				posts.post_date,
+				posts.post_by,
+				users.user_id,
+				users.user_name
+				FROM
+					posts
+				LEFT JOIN
+					users
+				ON
+					posts.post_by = users.user_id
+				WHERE
+					posts.post_topic = " . mysql_real_escape_string(isset($_GET['id']));
+         
         $result = mysql_query($sql);
-                         
+         
         if(!$result)
         {
-            echo 'Dit indlæg kunne ikke gemmes, prøv igen senere.';
+            echo 'Indlæggene kunne ikke vises. Prøv igen.';
         }
         else
         {
-            echo 'Dit indlæg er gemt, se det <a href="topic.php?id=' . htmlentities(isset($_GET['id'])) . '">her</a>.';
+            if(mysql_num_rows($result) == 0)
+            {
+                echo 'Der er endnu ingen indlæg i dette emne.';
+            }
+            else
+            {
+                //prepare the table
+                echo '<table border="1">
+                      <tr>
+                        <th>' .$row['post_by'] . ' ' .$row['post_date'] . '</th>
+                      </tr>'; 
+                     
+                while($row = mysql_fetch_assoc($result))
+                {               
+                echo '<tr>';
+                        echo '<td class="leftpart">
+							' . $row['post_content'] . '
+							  </td>';
+                echo '</tr>';
+                }
+				echo '</table>';
+				echo '<form method="post" action="reply.php?id=' . mysql_real_escape_string(isset($_GET['id'])) . '">';
+				echo '<textarea name="reply-content"></textarea>';
+				echo '<input type="submit" value="Indsend indlæg" />';
+                echo '</form>';
+            }
         }
     }
 }

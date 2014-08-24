@@ -9,7 +9,7 @@ body {
 }
  
 #content {
-    background-color: #fff;
+    background-color: #F8F8F8;
     border: 1px solid #000;
     float: left;
     font-family: Arial;
@@ -47,6 +47,7 @@ body {
  
 /* begin table styles */
 table {
+	background-color: #F8F8F8;
     border-collapse: collapse;
     width: 100%;
 }
@@ -61,8 +62,8 @@ table a:hover {
 }
  
 th {
-    background-color: #B40E1F;
-    color: #F0F0F0;
+    background-color: #5CB85C;
+    color: #FFFFFF;
 }
  
 td {
