@@ -10,7 +10,7 @@ $sql = "SELECT
 	FROM
 		topics
 	WHERE
-		topics.topic_id = " . mysql_real_escape_string(isset($_GET['id']));
+		topics.topic_id = " . mysql_real_escape_string($_GET['id']);
  
 $result = mysql_query($sql);
  
@@ -47,7 +47,7 @@ else
 				ON
 					posts.post_by = users.user_id
 				WHERE
-					posts.post_topic = " . mysql_real_escape_string(isset($_GET['id']));
+					posts.post_topic = " . mysql_real_escape_string($_GET['id']);
          
         $result = mysql_query($sql);
          
