@@ -64,28 +64,29 @@ else
             else
             {
                 //prepare the table
-                echo '<table border="1">
-                      <tr>
-                        <th>' .$row['post_by'] . ' ' .$row['post_date'] . '</th>
-                      </tr>'; 
+                echo '<table border="1">';
                      
                 while($row = mysql_fetch_assoc($result))
-                {               
-                echo '<tr>';
-                        echo '<td class="leftpart">
-							' . $row['post_content'] . '
-							  </td>';
+                {
+				echo '<tr>
+                        <th>Skrevet af: ' .$row['user_name'] . ' d. ' .$row['post_date'] . '</th>
+                      </tr>
+					  <tr>
+                      <td class="leftpart">
+						' . $row['post_content'] . '
+					</td>';
                 echo '</tr>';
                 }
 				echo '</table>';
+				echo '<hr>';
 				echo '<form method="post" action="reply.php?id=' . mysql_real_escape_string(isset($_GET['id'])) . '">';
 				echo '<textarea name="reply-content"></textarea>';
+				echo '<br />';
 				echo '<input type="submit" value="Indsend indlæg" />';
                 echo '</form>';
             }
         }
     }
 }
- 
 include 'footer.php';
 ?>
