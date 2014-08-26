@@ -75,6 +75,7 @@ else
 						echo '<form method="post" action="delete_reply.php?id="' . mysql_real_escape_string($_GET['id']) . '>';
 						echo '<input type="submit" value="Slet indlæg" />';
 						echo '</form>';
+						echo '</th>';
 					}
 					else
 					{
