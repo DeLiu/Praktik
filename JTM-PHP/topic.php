@@ -69,8 +69,18 @@ else
                 while($row = mysql_fetch_assoc($result))
                 {
 				echo '<tr>
-                        <th>Skrevet af: ' .$row['user_name'] . ' d. ' .$row['post_date'] . '</th>
-                      </tr>
+                        <th>Skrevet af: ' .$row['user_name'] . ' d. ' .$row['post_date'];
+					if (isset($_SESSION['user_level']) == 1)
+					{
+						echo '<form method="post" action="delete_reply.php?id="' . mysql_real_escape_string($_GET['id']) . '>';
+						echo '<input type="submit" value="Slet indlæg" />';
+						echo '</form>';
+					}
+					else
+					{
+						'</th>';
+					}
+                echo'</tr>
 					  <tr>
                       <td class="leftpart">
 						' . $row['post_content'] . '
