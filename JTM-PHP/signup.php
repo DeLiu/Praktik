@@ -86,7 +86,7 @@ else
                        '" . sha1($_POST['user_pass']) . "',
                        '" . mysql_real_escape_string($_POST['user_email']) . "',
                         NOW(),
-                        0)";
+                        1)";
                          
         $result = mysql_query($sql);
         if(!$result)
