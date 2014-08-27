@@ -71,7 +71,7 @@ else
                 {
 				echo '<tr>
                         <th>Skrevet af: ' .$row['user_name'] . ' d. ' .$row['post_date'];
-					if (isset($_SESSION['user_level']) == 1)
+					if (isset($_SESSION['user_level']) == 0)
 					{
 						echo '<form method="post" action="delete_reply.php?id=' . $row['post_id'] . '">';
 						echo '<input type="submit" value="Slet indlæg" />';

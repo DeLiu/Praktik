@@ -69,7 +69,7 @@ else
                     echo '<tr>';
                         echo '<td class="leftpart">';
                             echo '<h3><a href="topic.php?id=' . $row['topic_id'] . '">' . $row['topic_subject'] . '</a>';
-							if (isset($_SESSION['user_level']) == 1)
+							if (isset($_SESSION['user_level']) == 0)
 							{
 								echo '<form method="post" action="delete_topic.php?id=' . $row['topic_id'] . '">';
 								echo '<input type="submit" value="Slet tråd" />';
