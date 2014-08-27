@@ -14,9 +14,8 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 else
 {
     //the form has been posted, so save it
-    $sql = 'INSERT INTO categories(cat_name, cat_description)
-       VALUES(' . mysql_real_escape_string($_POST['cat_name']) . ',
-             ' . mysql_real_escape_string($_POST['cat_description']) . ')';
+    $sql = "INSERT INTO categories(cat_name, cat_description)
+       VALUES('" . mysql_real_escape_string($_POST['cat_name']) . "','" . mysql_real_escape_string($_POST['cat_description']) . "')";
     $result = mysql_query($sql);
     if(!$result)
     {

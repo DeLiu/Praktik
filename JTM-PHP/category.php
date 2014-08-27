@@ -10,7 +10,7 @@ $sql = "SELECT
         FROM
             categories
         WHERE
-            cat_id = " . mysql_real_escape_string(isset($_GET['id']));
+            cat_id = " . mysql_real_escape_string($_GET['id']);
  
 $result = mysql_query($sql);
  
@@ -41,7 +41,7 @@ else
                 FROM
                     topics
                 WHERE
-                    topic_cat = " . mysql_real_escape_string(isset($_GET['id']));
+                    topic_cat = " . mysql_real_escape_string($_GET['id']);
          
         $result = mysql_query($sql);
          
@@ -71,7 +71,7 @@ else
                             echo '<h3><a href="topic.php?id=' . $row['topic_id'] . '">' . $row['topic_subject'] . '</a>';
 							if (isset($_SESSION['user_level']) == 1)
 							{
-								echo '<form method="post" action="delete_topic.php?id="' . mysql_real_escape_string($_GET['id']) . '>';
+								echo '<form method="post" action="delete_topic.php?id=' . $row['topic_id'] . '">';
 								echo '<input type="submit" value="Slet tråd" />';
 								echo '</form>';
 								echo '</h3>';

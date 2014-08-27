@@ -38,6 +38,7 @@ else
 				posts.post_content,
 				posts.post_date,
 				posts.post_by,
+				posts.post_id,
 				users.user_id,
 				users.user_name
 				FROM
@@ -72,7 +73,7 @@ else
                         <th>Skrevet af: ' .$row['user_name'] . ' d. ' .$row['post_date'];
 					if (isset($_SESSION['user_level']) == 1)
 					{
-						echo '<form method="post" action="delete_reply.php?id="' . mysql_real_escape_string($_GET['id']) . '>';
+						echo '<form method="post" action="delete_reply.php?id=' . $row['post_id'] . '">';
 						echo '<input type="submit" value="Slet indlæg" />';
 						echo '</form>';
 						echo '</th>';
