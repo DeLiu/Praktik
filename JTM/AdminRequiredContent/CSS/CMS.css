@@ -1,9 +1,60 @@
 ﻿body {
 }
 
-.tableHead  {text-align : left}
+.nav-wrapper        {position : absolute;
+                     width : 100%;
+                     height : 100%;
+}
+
+.navbarMenu         {background-color : #c0ccd0;
+                     border-right : 3px groove grey;
+                     width : auto;
+                     height : 100%;
+                     float : left;
+
+}
+.container          {top : 0;
+                     bottom : 0;
+                     float : left;
+                     width : 90%;
+                     height : 100%;
+}
+
+.tableHead          {text-align : left}
+
+.outerContentHolder {background-color : #c0ccd0;
+                     padding-top : 20px;
+                     height : 100%;
+}
+
+.innerContentHolder {margin-right : 10%;
+                     margin-left : 10%;
+                     margin-top : 20px;
+                     margin-bottom : 20px;
+                     background-color : #8cafc2;
+                     border-radius : 10px;
+                     padding-bottom : 20px;
+                     padding-left : 20px;
+                     padding-right :20px;
+                     min-width : 300px;
+}
+
+.contentHolder      { background-color : #c0ccd0;
+                      border-radius : 10px;
+
+}
+
+td              {padding : 5px;}
+
+.ContentTable   {width : 100%;
+                 padding : 10px;
+
+}
+
 .alignRight {text-align : right; 
              vertical-align : top;
 }
+
+.buttonCell {width : 50px}
 
 

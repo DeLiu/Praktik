@@ -16,6 +16,6 @@ public partial class AdminRequiredContent_EditLinks : System.Web.UI.Page
         string urlstring = linkTextBox.Text;
 
 
-        listedLinks.InnerHtml = "<li><asp:HyperLink NavigateUrl='http://tv2.dk'>"+ titleTextBox.Text +"</asp:HyperLink></li>";
+        //listedLinks.InnerHtml = "<li><asp:HyperLink NavigateUrl='http://tv2.dk'>"+ titleTextBox.Text +"</asp:HyperLink></li>";
     }
 }
