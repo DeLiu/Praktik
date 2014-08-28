@@ -29,7 +29,7 @@
                     <StaticSelectedStyle BackColor="#507CD1" />
                 </asp:Menu>
             </div>
-            <div class="container">
+            <div class="outerContentHolder">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
