@@ -91,11 +91,18 @@ else
                 }
 				echo '</table>';
 				echo '<hr>';
-				echo '<form method="post" action="reply.php?id=' . mysql_real_escape_string(isset($_GET['id'])) . '">';
-				echo '<textarea name="reply-content"></textarea>';
-				echo '<br />';
-				echo '<input type="submit" value="Indsend indlæg" />';
-                echo '</form>';
+				if ($row['topic_locked'] == 0)
+				{
+					echo '<form method="post" action="reply.php?id=' . mysql_real_escape_string(isset($_GET['id'])) . '">';
+					echo '<textarea name="reply-content"></textarea>';
+					echo '<br />';
+					echo '<input type="submit" value="Indsend indlæg" />';
+					echo '</form>';
+				}
+				else
+				{
+					echo 'Denne tråd er blevet låst af en administrator.\n Det er ikke længere muligt at oprette indlæg i den.';
+				}
             }
         }
     }

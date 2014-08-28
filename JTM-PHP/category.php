@@ -74,6 +74,9 @@ else
 								echo '<form method="post" action="delete_topic.php?id=' . $row['topic_id'] . '">';
 								echo '<input type="submit" value="Slet tråd" />';
 								echo '</form>';
+								echo '<form method="post" action="lock_topic.php?id=' . $row['topic_id'] . '">';
+								echo '<input type="submit" value="Lås tråd" />';
+								echo '</form>';
 								echo '</h3>';
 							}
 							else
