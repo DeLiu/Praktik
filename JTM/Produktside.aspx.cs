@@ -14,7 +14,7 @@ public partial class Produktside : System.Web.UI.Page
         html += "<table class='center'>";
         html += "<tr>";
         html += "<td><b>Produkt ID</b></td><td><b>Korn Type</b></td> <td><b>Mængde</b></td><td><b>pris per kg</b></td><td><b>Beskrivelse</b></td>";
-
+        
         DB.Open();
         string[][] getData = DB.Query("SELECT * FROM productinfo");
         content12.InnerHtml = "";
