@@ -9,7 +9,7 @@ public partial class Forum_Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        SQLDatabase db = new SQLDatabase("JTM-ForumDB.mdf", "LocalDB", "", "");
+        SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
         string html = "";
 
         try
