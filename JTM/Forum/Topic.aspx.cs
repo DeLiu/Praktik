@@ -31,7 +31,7 @@ public partial class Forum_Topic : System.Web.UI.Page
                 html += "<th>Skrevet af: " + getPos[i][6] + " d. " + getPos[i][2];
                 if (2 + 2 == 3)
                 {
-                    html += "<form method='post' action='Delete_reply.aspx?id=" + getPos[i][4] + "'>";
+                    html += "<form method='post' action='Delete_Reply.aspx?id=" + getPos[i][4] + "'>";
                     html += "<input type='submit' value='Slet indlæg' />";
                     html += "</form>";
                     html += "</th>";
@@ -50,13 +50,13 @@ public partial class Forum_Topic : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-
+            html = "Fejlede under hetning af indlæg.";
         }
         finally
         {
             html +=  "</table>";
 			html +=  "<hr>";
-			html +=  "<form method='post' action='Reply.aspx?id=" + Request.QueryString["id"] + "'>";
+			html +=  "<form method='post' runat='server' action='Reply.aspx?id=" + Request.QueryString["id"] + "'>";
 			html +=  "<textarea name='reply-content'></textarea>";
 			html +=  "<br />";
 			html +=  "<input type='submit' value='Indsend indlæg' />";

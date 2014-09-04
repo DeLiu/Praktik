@@ -33,7 +33,7 @@ public partial class Forum_Default : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            
+            html = "Trådene kunne ikke hentes";
         }
         finally
         {

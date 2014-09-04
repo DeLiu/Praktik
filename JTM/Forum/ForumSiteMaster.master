@@ -14,10 +14,9 @@
     <link href="../Content/style.css" rel="stylesheet" />
 </head>
 <body>
-   <form id="form1" runat="server"> 
     <h1>JTM-Landbrug - Forum</h1>
     <div id="wrapper">
-        <div id="menu">    
+        <div id="menu" runat="server">    
                 <a class="item"  runat="server" href="../Default">Hjem</a>
                 <a class="item"  runat="server" href="../About">Om JTM-Landbrug</a>
                 <a class="item"  runat="server" href="~/Forum/Default">Forum</a>
@@ -30,7 +29,6 @@
                     <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
                 </div>
     <div id="footer">JTM-Landbrug</div>    
-   </form>
     
 </body>
 </html>
