@@ -23,7 +23,7 @@ public partial class Forum_Topic : System.Web.UI.Page
                 html += "<h2>Tråde i " + getCat[i][1] + "-subforummet</h2>";
             }
 
-                html += "<table border='1'>";
+            html += "<table border='1'>";
             html += "<tr>";
             html += "<th>Tråd</th>";
             html += "<th>Skabt d. </th>";
@@ -47,7 +47,7 @@ public partial class Forum_Topic : System.Web.UI.Page
                 }
                 html += "</td>";
                 html += "<td class='rightpart'>";
-                html += "";
+                html += getTop[i][2];
                 html += "</td>";
                 html += "</tr>";
             }
@@ -58,7 +58,7 @@ public partial class Forum_Topic : System.Web.UI.Page
         }
         finally
         {
-            forumcontent.InnerHtml = html;
+            content.InnerHtml = html;
             db.Close();
         }
     }

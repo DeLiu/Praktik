@@ -2,5 +2,5 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
-    <div id="forumcontent" runat="server"></div>
+    <div id="content" runat="server"></div>
 </asp:Content>
