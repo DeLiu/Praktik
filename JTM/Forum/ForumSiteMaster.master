@@ -19,12 +19,13 @@
     <div id="wrapper">
         <div id="menu">
             <div id="userbar">      
-                <div>
-                    <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
-                </div>
+                
             </div>
         </div>
     </div>
+       <div>
+                    <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
+                </div>
     <div id="footer">JTM-Landbrug</div>    
    </form>
     

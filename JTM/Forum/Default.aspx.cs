@@ -26,7 +26,7 @@ public partial class Forum_Default : System.Web.UI.Page
             {
                 html += "<tr>";
                 html += "<td class='leftpart'>";
-                html += "<h3><a href='category.aspx?id=" + sql[i][0] + "'>" + sql[i][1] + "</a></h3>" + sql[i][2];
+                html += "<h3><a href='Topic.aspx?id=" + sql[i][0] + "'>" + sql[i][1] + "</a></h3>" + sql[i][2];
                 html += "</td>";
                 html += "</tr>";
             }
