@@ -18,6 +18,8 @@ public partial class Forum_Topic : System.Web.UI.Page
             string[][] getTop = db.Query("SELECT * topic_id, topic_subject FROM topics WHERE topics.topic_id = " + Request.QueryString["id"]);
             string[][] getPos = db.Query("SELECT posts.post_topic, posts.post_content, posts.post_date, posts.post_by, posts.post_id, users.user_id, users.user_name FROM posts LEFT JOIN users ON posts.post_by = Users.user_id WHERE posts.post_topic =" + Request.QueryString["id"]);
 
+            html += "<table border='1px'>";
+
             for (int i = 0; i < getTop.Length; i++)
             {
                 html += "<h2>Indlæg i ′" + getTop[i][1] + "′</h2>";
@@ -26,7 +28,7 @@ public partial class Forum_Topic : System.Web.UI.Page
             for (int i = 0; i < getPos.Length; i++)
             {
                 html += "<tr>";
-                html += "<th>Skrevet af: " + getPos[i][6] + "d. " + getPos[i][2];
+                html += "<th>Skrevet af: " + getPos[i][6] + " d. " + getPos[i][2];
                 if (2 + 2 == 3)
                 {
                     html += "<form method='post' action='Delete_reply.aspx?id=" + getPos[i][4] + "'>";
