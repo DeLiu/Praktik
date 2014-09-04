@@ -17,10 +17,13 @@
    <form id="form1" runat="server"> 
     <h1>JTM-Landbrug - Forum</h1>
     <div id="wrapper">
-        <div id="menu">
-            <div id="userbar">      
-                
-            </div>
+        <div id="menu">    
+                <a class="item"  runat="server" href="../Default">Hjem</a>
+                <a class="item"  runat="server" href="../About">Om JTM-Landbrug</a>
+                <a class="item"  runat="server" href="~/Forum/Default">Forum</a>
+                <a class="item"  runat="server" href="../Produktside">Produkter</a>
+                <a class="item"  runat="server" href="../Contact">Kontakt</a>
+            
         </div>
     </div>
        <div>

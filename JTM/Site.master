@@ -53,7 +53,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Hjem</a></li>
                         <li><a runat="server" href="~/About">Om JTM-Landbrug</a></li>
-                        <li><a runat="server" href="../Forum/MainPage">Forum</a></li>
+                        <li><a runat="server" href="../Forum/Default">Forum</a></li>
                         <li><a runat="server" href="~/Produktside">Produkter</a></li>
                         <li><a runat="server" href="~/Contact">Kontakt</a></li>
                     </ul>
