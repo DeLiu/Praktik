@@ -11,7 +11,7 @@ public partial class Forum_Topic : System.Web.UI.Page
     {
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
         string html = "";
-
+        
         try
         {
             db.Open();
@@ -50,18 +50,21 @@ public partial class Forum_Topic : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            html = "Fejlede under hetning af indlæg.";
+            html = "Fejlede under hentning af indlæg.";
         }
         finally
         {
             html +=  "</table>";
 			html +=  "<hr>";
-			html +=  "<form method='post' runat='server' action='Reply.aspx?id=" + Request.QueryString["id"] + "'>";
-			html +=  "<textarea name='reply-content'></textarea>";
-			html +=  "<br />";
-			html +=  "<input type='submit' value='Indsend indlæg' />";
-            html +=  "</form>";
+			
             content.InnerHtml = html;
         }
+    }
+    
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Session["Reply"] = reply.Value;
+        Response.Redirect("reply.aspx?id=" + Request.QueryString["id"], false);
+        
     }
 }

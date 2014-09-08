@@ -15,7 +15,7 @@ public partial class Forum_Reply : System.Web.UI.Page
         try
         {
             db.Open();
-            db.Exec("INSERT INTO posts(post_content, post_date, post_by) VALUES ('" + Request.Form["reply-content"] + "', NOW(), " + Request.QueryString["id"] + ", " + "0");
+            db.Exec("INSERT INTO posts(post_content, post_date, post_topic, post_by) VALUES ('" + Session["reply"] + "', GETDATE(), " + Request.QueryString["id"] + ", " + "1"+")");
             html += "Dit indlæg er gemt, se det <a href='Topic.aspx?id=" + Request.QueryString["id"] + "'>her</a>.";
         }
         catch (Exception ex)
@@ -26,6 +26,7 @@ public partial class Forum_Reply : System.Web.UI.Page
         {
             content.InnerHtml = html;
             db.Close();
+            Session.Clear();
         }
     }
 }
