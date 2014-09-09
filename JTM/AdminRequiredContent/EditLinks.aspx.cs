@@ -14,15 +14,10 @@ public partial class AdminRequiredContent_EditLinks : System.Web.UI.Page
     }
     protected void add_button_Click(object sender, EventArgs e)
     {
-        string urlstring = linkTextBox.Text;
-
         DB.Open();
         DB.Exec("INSERT INTO links (title, link) VALUES ('" + titleTextBox.Text + "', '" + linkTextBox.Text + "')");
-        //content12.InnerHtml += "<p>" + getData[i][1] + i + "</p>";
         DB.Close();
 
         GridView1.DataBind();
-
-        //listedLinks.InnerHtml = "<li><asp:HyperLink NavigateUrl='http://tv2.dk'>"+ titleTextBox.Text +"</asp:HyperLink></li>";
     }
 }

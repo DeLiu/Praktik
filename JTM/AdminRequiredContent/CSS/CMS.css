@@ -1,66 +1,99 @@
 ﻿body {
 }
 
-.nav-wrapper        {position : absolute;
-                     width : 100%;
-                     height : 100%;  
+.nav-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-.navbarMenu         {background-color : #c0ccd0;
-                     border-right : 3px groove grey;
-                     width : 10%;
-                     height : 100%;
-                     float : left;
+.navbarMenu {
+    background-color: #c0ccd0;
+    border-right: 3px groove grey;
+    width: 10%;
+    height: 100%;
+    float: left;
 }
 
-.outerContentHolder {background-color : #c0ccd0;
-                     float : left;
-                     height : 100%;
-                     padding-left : 8%;
-                     padding-right : 8%;
-                     width : 73%;
+.outerContentHolder {
+    background-color: #c0ccd0;
+    float: left;
+    height: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 73%;
 }
 
-.tableHead              {text-align : left}
-
-.innerContentHolder     {background-color : #8cafc2;
-                         border-radius : 10px;
-                         padding-bottom : 20px;
-                         padding-left : 20px;
-                         padding-right :20px;
-                         min-width : 300px;
+.tableHead {
+    text-align: left;
 }
 
-.contentHolder          {background-color : #c0ccd0;
-                         padding : 10px;
-                         border-radius : 10px;
-
+.innerContentHolder {
+    background-color: #8cafc2;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 300px;
 }
 
-.GridHolder             {padding : 20px;
-
+.content-wrapper {
+    width : 100%;
+    padding-top : 20px;
 }
 
-td                      {padding : 5px;}
-
-.ContentTable           {width : 100%;
-                         padding : 10px;
-
+.content-wrapper .columnHolder-left {
+    background-color: #8cafc2;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float : left;
+    width : 30%;
+    margin-right : 20px;
 }
 
-.ContentTable.button    {width : 100px;
-
+.content-wrapper .colummholder-right {
+    background-color: #8cafc2;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float : left;
+    width : auto;
+    max-width : 60%;
 }
 
-.alignRight         {text-align : right; 
-                     vertical-align : top;
+.contentHolder {
+    background-color: #c0ccd0;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.buttonCell         {width : 50px}
-
-.profilTextBox      {width : 100%;
-                     height : 300px;
-
+.GridHolder {
+    padding: 20px;
 }
 
+td {
+    padding: 5px;
+}
 
+.ContentTable {
+    width : 100%;
+    padding: 10px;
+}
+
+.ContentTable .titleCell {
+    text-align: right;
+    vertical-align: top;
+    width : 100px;
+}
+
+.buttonCell {
+    width: 50px;
+}
+
+.profilTextBox {
+    width: 100%;
+    height: 300px;
+}

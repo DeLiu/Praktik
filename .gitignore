@@ -5,3 +5,7 @@ JTM/App_Data/JTM.mdf
 JTM/App_Data/JTM_log.ldf
 JTM/vwd.webinfo
 JTM/vwd.webinfo
+JTM/Web.config
+JTM/AdminRequiredContent/EditCategory.aspx
+JTM/AdminRequiredContent/EditCategory.aspx.cs
+JTM/Web.config
