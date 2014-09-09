@@ -18,12 +18,12 @@ public partial class Forum_Topic : System.Web.UI.Page
             string[][] getTop = db.Query("SELECT * topic_id, topic_subject FROM topics WHERE topics.topic_id = " + Request.QueryString["id"]);
             string[][] getPos = db.Query("SELECT posts.post_topic, posts.post_content, posts.post_date, posts.post_by, posts.post_id, users.user_id, users.user_name FROM posts LEFT JOIN users ON posts.post_by = Users.user_id WHERE posts.post_topic =" + Request.QueryString["id"]);
 
-            html += "<table border='1px'>";
-
             for (int i = 0; i < getTop.Length; i++)
             {
                 html += "<h2>Indlæg i ′" + getTop[i][1] + "′</h2>";
             }
+
+            html += "<table border='1px'>";
 
             for (int i = 0; i < getPos.Length; i++)
             {
@@ -43,6 +43,7 @@ public partial class Forum_Topic : System.Web.UI.Page
                 html += getPos[i][1];
                 html += "</td>";
                 html += "</tr>";
+
             }
         }
         catch (Exception ex)
@@ -51,10 +52,19 @@ public partial class Forum_Topic : System.Web.UI.Page
         }
         finally
         {
+            string[][] getLocked = db.Query("SELECT topic_locked FROM topics WHERE topic_id = " + Request.QueryString["id"]);
             html +=  "</table>";
 			html +=  "<hr>";
-			
-            content.InnerHtml = html;
+
+            for (int i = 0; i < getLocked.Length; i++)
+            {
+                if (getLocked[i][0] == "1")
+                {
+                    Button1.Enabled = false;
+                    html += "Denne tråd er blevet lukket af en administrator. Det er ikke længere muligt at oprette indlæg i denne.";
+                }
+            }
+                content.InnerHtml = html;
         }
     }
     
