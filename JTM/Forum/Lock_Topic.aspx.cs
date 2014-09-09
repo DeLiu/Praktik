@@ -12,12 +12,12 @@ public partial class Forum_Lock_Topic : System.Web.UI.Page
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
         string html = "";
 
-        if (2 + 4 == 1)
+        if (2 + 4 == 6)
         {
             try
             {
                 db.Open();
-                db.Exec("UPDATE topics SET topic_locked = 1, WHERE topic_id =" + Request.QueryString["id"]);
+                db.Exec("UPDATE topics SET topic_locked = 1 WHERE topic_id =" + Request.QueryString["id"]);
             }
             catch (Exception ex)
             {

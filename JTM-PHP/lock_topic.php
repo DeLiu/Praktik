@@ -17,7 +17,7 @@ else
     else
     {
         //a real user posted a real reply
-        $sql = "UPDATE topics SET topic_locked = 1, WHERE topic_id =" . mysql_real_escape_string($_GET['id']);
+        $sql = "UPDATE topics SET topic_locked = 1 WHERE topic_id =" . mysql_real_escape_string($_GET['id']);
                          
         $result = mysql_query($sql);
                          
