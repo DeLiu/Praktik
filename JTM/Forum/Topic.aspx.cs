@@ -61,7 +61,7 @@ public partial class Forum_Topic : System.Web.UI.Page
                 if (getLocked[i][0] == "1")
                 {
                     Button1.Enabled = false;
-                    html += "Denne tråd er blevet lukket af en administrator. Det er ikke længere muligt at oprette indlæg i denne.";
+                    html += "<p style='color:red'>Denne tråd er blevet lukket af en administrator. Det er ikke længere muligt at oprette indlæg i denne.</p>";
                 }
             }
                 content.InnerHtml = html;
