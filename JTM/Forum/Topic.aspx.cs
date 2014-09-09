@@ -29,7 +29,7 @@ public partial class Forum_Topic : System.Web.UI.Page
             {
                 html += "<tr>";
                 html += "<th>Skrevet af: " + getPos[i][6] + " d. " + getPos[i][2];
-                if (2 + 2 == 4)
+                if (2 + 2 == 4) //TODO: Tjek user-level fra cookie
                 {
                     html += " <a class='item' href='Delete_Reply.aspx?id=" + getPos[i][4] + "'>Slet indlæg</a>";
                 }

@@ -13,7 +13,7 @@ public partial class Forum_Create_Topic : System.Web.UI.Page
     }
     protected void btnOpret_Click(object sender, EventArgs e)
     {
-        SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
+        SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", ""); //TODO: Tjek user-level fra cookie
 
         try
         {
