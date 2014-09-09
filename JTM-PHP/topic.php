@@ -74,6 +74,7 @@ else
 					if (isset($_SESSION['user_level']) == 0)
 					{
 						echo '<a class="item" href="delete_reply.php?id=' . $row['post_id'] . '">Slet indlæg</a>';
+						echo '</th>';
 					}
 					else
 					{
