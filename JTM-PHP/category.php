@@ -71,12 +71,8 @@ else
                             echo '<h3><a href="topic.php?id=' . $row['topic_id'] . '">' . $row['topic_subject'] . '</a>';
 							if (isset($_SESSION['user_level']) == 0)
 							{
-								echo '<form method="post" action="delete_topic.php?id=' . $row['topic_id'] . '">';
-								echo '<input type="submit" value="Slet tråd" />';
-								echo '</form>';
-								echo '<form method="post" action="lock_topic.php?id=' . $row['topic_id'] . '">';
-								echo '<input type="submit" value="Lås tråd" />';
-								echo '</form>';
+								echo '<a class="item" href="delete_topic.php?id=' . $row['topic_id'] . '">Slet tråd</a>';
+								echo '<a class="item" href="action="lock_topic.php?id=' . $row['topic_id'] . '">Lås tråd</a>';
 								echo '</h3>';
 							}
 							else
