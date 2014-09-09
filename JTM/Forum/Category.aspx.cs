@@ -34,12 +34,10 @@ public partial class Forum_Topic : System.Web.UI.Page
                 html += "<tr>";
                 html += "<td class='leftpart'>";
                 html += "<h3><a href='Topic.aspx?id=" + getTop[i][0] + "'>" + getTop[i][1] + "</a>";
-                if (1 + 1 == 3)
+                if (1 + 1 == 2)
                 {
-                    html += "<form method='post' action='Delete_Topic.aspx?id=" + getTop[i][0] + "'>";
-					html += "<input type='submit' value='Slet tråd' />";
-					html += "</form>";
-					html += "</h3>";
+                    html += " <a class='item' href='Delete_Topic.aspx?id='" + getTop[i][0] + "'>Slet tråd</a>";
+                    html += "<a class='item' href='Lock_Topic.aspx?id='" + getTop[i][0] + "'>Lås tråd</a>";
                 }
                 else
                 {

@@ -29,12 +29,9 @@ public partial class Forum_Topic : System.Web.UI.Page
             {
                 html += "<tr>";
                 html += "<th>Skrevet af: " + getPos[i][6] + " d. " + getPos[i][2];
-                if (2 + 2 == 3)
+                if (2 + 2 == 4)
                 {
-                    html += "<form method='post' action='Delete_Reply.aspx?id=" + getPos[i][4] + "'>";
-                    html += "<input type='submit' value='Slet indlæg' />";
-                    html += "</form>";
-                    html += "</th>";
+                    html += " <a class='item' href='Delete_Reply.aspx?id=" + getPos[i][4] + "'>Slet indlæg</a>";
                 }
                 else
                 {
