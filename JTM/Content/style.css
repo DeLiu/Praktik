@@ -4,10 +4,11 @@ body {
 }
  
 #wrapper {
-    width: 900px;
-    margin: 0 auto;             /* center the page */
+    width: 80%;
+    margin: 0 auto;
+                 /* center the page */
 }
- 
+
 #content {
     background-color: #F8F8F8;
     border: 1px solid #000;
@@ -20,12 +21,13 @@ body {
  
 #menu {
     float: left;
-    border: 1px solid #000;
-    border-bottom: none;        /* avoid a double border */
+    border: 1px solid #000;       /* avoid a double border */
     clear: both;                /* clear:both makes sure the content div doesn't float next to this one but stays under it */
-    width:100%;
+    width:94%;
     height:20px;
-    padding: 0 30px;
+    padding-left:3%;
+    padding-right:3%;
+    padding-top:5px;
     background-color: #FFF;
     text-align: left;
     font-size: 85%;
@@ -35,12 +37,7 @@ body {
     background-color: #009FC1;
 }
  
-#userbar {
-    background-color: #fff;
-    float: right;
-    width: 250px;
-}
- 
+
 #footer {
     clear: both;
 }
@@ -65,7 +62,7 @@ th {
     background-color: #5CB85C;
     color: #FFFFFF;
 }
- 
+
 td {
     padding: 5px;
 }
@@ -84,7 +81,7 @@ h3 {margin: 0; padding: 0;}
     border: 1px solid #032472;
     color: #FFF;
     font-family: Arial;
-    padding: 3px;
+    padding: 0px 2px;
     text-decoration: none;
 }
  
@@ -101,7 +98,7 @@ h3 {margin: 0; padding: 0;}
     color: #373737;
 }
 #footer {
-    font-size: 65%;
+    font-size: 100%;
     padding: 3px 0 0 0;
 }
  
