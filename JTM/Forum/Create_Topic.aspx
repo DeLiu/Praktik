@@ -14,7 +14,9 @@
 &nbsp;Besked:</p>
         <p>
             <asp:TextBox ID="txtContent" runat="server" Height="186px" Width="396px"></asp:TextBox>
-&nbsp;<asp:Button ID="btnOpret" runat="server" OnClick="btnOpret_Click" Text="Opret tråd" />
+&nbsp;</p>
+        <p>
+            <asp:Button ID="btnOpret" runat="server" OnClick="btnOpret_Click" Text="Opret tråd" />
 &nbsp;<asp:SqlDataSource ID="forumDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ForumConnectionString %>" SelectCommand="SELECT [cat_name] FROM [categories]"></asp:SqlDataSource>
         </p>
     </div>
