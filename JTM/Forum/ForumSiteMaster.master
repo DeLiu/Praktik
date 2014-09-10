@@ -5,7 +5,17 @@
 <script runat="server">
 
 </script>
-
+<% 
+   if (Request.Cookies["userName"] != null)
+   {
+       userbar.InnerHtml = "Velkommen " + Server.HtmlEncode(Request.Cookies["userName"].Value) +" <a class='item' href=logout.aspx>logout</a>";
+       
+   }
+   else
+   {
+       userbar.InnerHtml = "<a class='item' href=Login.aspx>Login</a> or <a class='item' href=SignUp.aspx>signup</a>";
+   }
+%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -17,23 +27,18 @@
     <h1>JTM-Landbrug - Forum</h1>
     <div id="wrapper">
         <div id="menu" runat="server">    
-                <a class="item"  runat="server" href="../Default">Hjem</a>
-                <a class="item"  runat="server" href="../About">Om JTM-Landbrug</a>
-                <a class="item"  runat="server" href="~/Forum/Default">Forum</a>
-                <a class="item"  runat="server" href="../Produktside">Produkter</a>
-                <a class="item"  runat="server" href="../Contact">Kontakt</a>
-               <div style="float:right;"> 
-                <a class="item" runat="server" href="../Login">Login</a>
-                <a class="item" runat="server" href="../logout">logout</a>
-               </div>
+            <a class="item"  runat="server" href="../Default">Hjem</a>
+            <a class="item"  runat="server" href="../About">Om JTM-Landbrug</a>
+            <a class="item"  runat="server" href="~/Forum/Default">Forum</a>
+            <a class="item"  runat="server" href="../Produktside">Produkter</a>
+            <a class="item"  runat="server" href="../Contact">Kontakt</a>
+            <div id="userbar" runat="server" style="float:right;"></div>
         </div>
-        
-    
        <div>
            <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
        </div>
      
-    <div id="footer">JTM-Landbrug</div>    
+        <div id="footer">JTM-Landbrug</div> <!--Bliver ikke vist rigtig skal måske flyttes til cs delen?--> 
     </div>
 </body>
 </html>

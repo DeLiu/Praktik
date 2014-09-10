@@ -11,7 +11,7 @@ public partial class Forum_Topic : System.Web.UI.Page
     {
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
         string html = "";
-
+        
         try
         {
             db.Open();
