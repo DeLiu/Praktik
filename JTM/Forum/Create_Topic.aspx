@@ -13,7 +13,7 @@
             </asp:DropDownList>
 &nbsp;Besked:</p>
         <p>
-            <asp:TextBox ID="txtContent" runat="server" Height="186px" Width="396px"></asp:TextBox>
+            <asp:TextBox ID="txtContent" runat="server" Height="167px" Width="399px" TextMode="MultiLine"></asp:TextBox>
 &nbsp;</p>
         <p>
             <asp:Button ID="btnOpret" runat="server" OnClick="btnOpret_Click" Text="Opret tråd" />
