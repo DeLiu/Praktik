@@ -3,5 +3,13 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
-    <div id="content" runat="server"></div>
+    <form id="form1" runat="server">
+    <div>
+        <input type="text" id="username" runat="server" placeholder="Brugernavn" />
+        <input type="password" id="password" runat="server" placeholder="Password" />
+        
+        <asp:Button ID="loginbt" runat="server" Text="Login" />
+        
+    </div>
+    </form>
 </asp:Content>

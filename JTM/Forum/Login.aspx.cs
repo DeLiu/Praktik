@@ -11,4 +11,23 @@ public partial class Forum_Login : System.Web.UI.Page
     {
 
     }
+
+    protected void loginbt_Click(object sender, EventArgs e)
+    {
+        SQLDatabase Db = new SQLDatabase("ForumDB.mdf", "localDB", "", "");
+        try
+        {
+            Db.Open();
+           string[][] user = Db.Query("SELECT user_name,user_pass FROM Users Where user_name =" + username);
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+            content.InnerHtml = html;
+            db.Close();
+        }
+    }
 }
