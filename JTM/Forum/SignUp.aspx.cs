@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Text;
+using crypto;
 
 public partial class Forum_SignUp : System.Web.UI.Page
 {
@@ -13,23 +14,13 @@ public partial class Forum_SignUp : System.Web.UI.Page
     {
 
     }
-
-    public string ComputeHash(string input, HashAlgorithm algorithm)
-    {
-        Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-
-        Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
-
-        return BitConverter.ToString(hashedBytes);
-    }
-
     protected void btnOpret_Click(object sender, EventArgs e)
     {
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
 
         if (txtPassword.Text == txtConfPass.Text)
         {
-            string password = ComputeHash(txtPassword.Text, new SHA256CryptoServiceProvider());
+            string password = PasswordHash.CreateHash(txtPassword.Text);
 
             try
             {
