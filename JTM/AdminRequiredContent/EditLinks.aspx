@@ -36,7 +36,7 @@
             <div class="innerContentHolder">
                 <h4>Tilføjede Links</h4>
                 <div class="contentHolder GridHolder">
-                    <asp:GridView ID="GridView1" Class="ContentTable" runat="server" DataSourceID="linkDataSource" AutoGenerateColumns="False" DataKeyNames="linkId">
+                    <asp:GridView ID="GridView1" CssClass="ContentTable" runat="server" DataSourceID="linkDataSource" AutoGenerateColumns="False" DataKeyNames="linkId">
                         <Columns>
                             <asp:BoundField DataField="linkId" HeaderText="linkId" ReadOnly="True" SortExpression="linkId" Visible="False" />
                             <asp:BoundField DataField="title" HeaderText="title" SortExpression="title" Visible="False" />
