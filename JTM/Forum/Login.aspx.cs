@@ -22,11 +22,8 @@ public partial class Forum_Login : System.Web.UI.Page
             {
                 if (getuser[i][1] == password.Value)
                 {
-                    HttpCookie myCookie = new HttpCookie("Userinfo");
-                    myCookie["username"] = getuser[i][0];
-                    myCookie["userlevel"] = getuser[i][2];
-                    myCookie.Expires = DateTime.Now.AddDays(1d);
-                    Response.Cookies.Add(myCookie);
+                    Session["username"] = getuser[i][0];
+                    Session["userlevel"] = getuser[i][2];
                     Response.Redirect("Default.aspx");
                     
                 }
