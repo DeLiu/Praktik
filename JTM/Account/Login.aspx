@@ -1,4 +1,4 @@
-﻿<%@ Page Title="JTM-Landbrug" Language="C#" MasterPageFile="~/AdminRequiredContent/CMS.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Account_Login" Async="true" %>
+﻿<%@ Page Title="JTM-Landbrug" Language="C#" MasterPageFile="~/MasterPage/Site.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Account_Login" Async="true" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 

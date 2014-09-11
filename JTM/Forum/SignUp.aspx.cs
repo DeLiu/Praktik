@@ -17,8 +17,8 @@ public partial class Forum_SignUp : System.Web.UI.Page
     protected void btnOpret_Click(object sender, EventArgs e)
     {
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
-
-        if (txtUsername.Text & txtMail.Text != "" & txtMail.Text.Contains("@"))
+        
+        if ((txtUsername.Text != "") && (txtMail.Text != "") && (txtMail.Text.Contains("@")))
         {
             if (txtPassword.Text == txtConfPass.Text)
             {
@@ -44,5 +44,6 @@ public partial class Forum_SignUp : System.Web.UI.Page
         {
             lblFejl.Text = "Udfyld venligst alle felterne korrekt.";
         }
+        
     }
 }
