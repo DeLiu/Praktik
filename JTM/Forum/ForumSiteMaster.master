@@ -8,12 +8,12 @@
 <% 
    if (Request.Cookies["userName"] != null)
    {
-       userbar.InnerHtml = "Velkommen " + Server.HtmlEncode(Request.Cookies["userName"].Value) +" <a class='item' href=logout.aspx>logout</a>";
+       userbar.InnerHtml = "Velkommen " + Server.HtmlEncode(Request.Cookies["userName"].Value) +". <a class='item' href=logout.aspx>Log ud</a>.";
        
    }
    else
    {
-       userbar.InnerHtml = "<a class='item' href=Login.aspx>Login</a> or <a class='item' href=SignUp.aspx>signup</a>";
+       userbar.InnerHtml = "<a class='item' href=Login.aspx>Log ind</a> <a class='item' href=SignUp.aspx>Opret bruger</a>";
    }
 %>
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -26,7 +26,7 @@ public partial class Forum_Reply : System.Web.UI.Page
         {
             content.InnerHtml = html;
             db.Close();
-            Session.Clear();
+            Session.Remove("Reply");
         }
     }
 }

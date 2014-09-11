@@ -18,24 +18,31 @@ public partial class Forum_SignUp : System.Web.UI.Page
     {
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
 
-        if (txtPassword.Text == txtConfPass.Text)
+        if (txtUsername.Text & txtMail.Text != "" & txtMail.Text.Contains("@"))
         {
-            string password = PasswordHash.CreateHash(txtPassword.Text);
+            if (txtPassword.Text == txtConfPass.Text)
+            {
+                string password = PasswordHash.CreateHash(txtPassword.Text);
 
-            try
-            {
-                db.Open();
-                db.Exec("INSERT INTO Users(user_name, user_pass, user_email ,user_date, user_level) VALUES('" + txtUsername.Text + "', '" + password + "', '" + txtMail.Text + "', GETDATE(), 1)");
+                try
+                {
+                    db.Open();
+                    db.Exec("INSERT INTO Users(user_name, user_pass, user_email ,user_date, user_level) VALUES('" + txtUsername.Text + "', '" + password + "', '" + txtMail.Text + "', GETDATE(), 1)");
+                }
+                catch (Exception ex)
+                {
+                    lblFejl.Text = "En fejl er muligvis opstået. Prøv igen.";
+                }
+                finally
+                {
+                    content.InnerHtml = "Brugeren er nu oprettet. Du kan logge ind <a href='LogIn.aspx'>her</a>.";
+                    db.Close();
+                }
             }
-            catch (Exception ex)
-            {
-                lblFejl.Text = "En fejl er muligvis opstået. Prøv igen.";
-            }
-            finally
-            {
-                content.InnerHtml = "Brugeren er nu oprettet. Du kan logge ind <a href='LogIn.aspx'>her</a>.";
-                db.Close();
-            }
+        }
+        else
+        {
+            lblFejl.Text = "Udfyld venligst alle felterne korrekt.";
         }
     }
 }
