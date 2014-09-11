@@ -8,7 +8,7 @@
 <% 
    if (Session["username"] != null && Session["userlevel"] != null)
    {
-       userbar.InnerHtml = "Velkommen " + Session["username"]+","+Session["userlevel"] +". <a class='item' href=logout.aspx>Log ud</a>.";
+       userbar.InnerHtml = "Velkommen " + Session["username"] +". <a class='item' href=logout.aspx>Log ud</a>.";
        
    }
    else
