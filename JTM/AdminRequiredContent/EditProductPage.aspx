@@ -47,7 +47,7 @@
                 <br />
             </div>
         </div>
-        <div class="colummholder-right">
+        <div class="columnholder-right">
             <h4>Rediger Produkter</h4>
             <div class="contentHolder GridHolder">
                 <asp:GridView ID="GridView1" Class="ContentTable" runat="server" AutoGenerateColumns="False" DataSourceID="JTMProduct" AllowSorting="True" DataKeyNames="productid">

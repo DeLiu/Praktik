@@ -3,10 +3,8 @@
 <asp:Content ID="headerContent" runat="server" ContentPlaceHolderID="head">
 
     <style type="text/css">
-    .auto-style1 {
-        width: 605px;
-    }
-</style>
+
+    </style>
 
     </asp:Content>
 <asp:Content ID="bodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -18,7 +16,7 @@
                             <td style="width: 20%">
                                 <label>Title: </label>
                             </td>
-                            <td class="auto-style1">
+                            <td>
                                 <label>Link Adresse: </label>
                             </td>
                             <td></td>
@@ -27,7 +25,7 @@
                             <td>
                                 <asp:TextBox ID="titleTextBox" runat="server" Width="100%"></asp:TextBox>
                             </td>
-                            <td class="auto-style1">
+                            <td>
                                 <asp:TextBox ID="linkTextBox" runat="server" Width="100%"></asp:TextBox></td>
                             <td class="buttonCell">
                                 <asp:Button ID="Add_button" runat="server" Text="Tilføj" OnClick="add_button_Click" Width="100%" /></td>

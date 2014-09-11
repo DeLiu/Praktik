@@ -11,4 +11,9 @@ public partial class AdminRequiredContent_CMS : System.Web.UI.MasterPage
     {
 
     }
+
+    protected void Log_out(object sender, LoginCancelEventArgs e)
+    {
+        Context.GetOwinContext().Authentication.SignOut();
+    }
 }
