@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using crypto;
 
 public partial class Forum_Login : System.Web.UI.Page
 {
@@ -17,15 +18,14 @@ public partial class Forum_Login : System.Web.UI.Page
         try
         {
             Db.Open();
-            string[][] getuser = Db.Query("SELECT user_name,user_pass, userlevel FROM Users where user_name = '"+username.Value+"'");
+            string[][] getuser = Db.Query("SELECT user_name, user_pass, userlevel FROM Users where user_name = '" + username.Value + "'");
             for (int i = 0; i < getuser.Length; i++)
             {
-                if (getuser[i][1] == password.Value)
+                if (PasswordHash.ValidatePassword(password.Value, getuser[i][1]) == true)
                 {
                     Session["username"] = getuser[i][0];
                     Session["userlevel"] = getuser[i][2];
-                    Response.Redirect("Default.aspx");
-                    
+                    Response.Redirect("Default.aspx");       
                 }
                 else
                 {

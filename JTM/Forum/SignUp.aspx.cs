@@ -20,7 +20,7 @@ public partial class Forum_SignUp : System.Web.UI.Page
         
         if ((txtUsername.Text != "") && (txtMail.Text != "") && (txtMail.Text.Contains("@")))
         {
-            if (txtPassword.Text == txtConfPass.Text)
+            if (txtPassword.Text.Equals(txtConfPass.Text))
             {
                 string password = PasswordHash.CreateHash(txtPassword.Text);
 
