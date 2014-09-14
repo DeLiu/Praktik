@@ -13,7 +13,7 @@ public partial class Forum_Create_Topic : System.Web.UI.Page
     }
     protected void btnOpret_Click(object sender, EventArgs e)
     {
-        if (2 + 2 == 4) //TODO: Tjek user-level fra cookie
+        if (Response.Cookies["forumcookie"]["username"] != null)
         {
             SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", ""); 
 

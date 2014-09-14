@@ -23,8 +23,10 @@ public partial class Forum_Login : System.Web.UI.Page
             {
                 if (PasswordHash.ValidatePassword(password.Value, getuser[i][1]) == true)
                 {
-                    Session["username"] = getuser[i][0];
-                    Session["userlevel"] = getuser[i][2];
+                    HttpCookie cookie = new HttpCookie("forumcookie");
+                    cookie.Values.Add("username", getuser[i][0]);
+                    cookie.Values.Add("userlevel", getuser[i][2]);
+                    cookie.Expires = DateTime.Now.AddDays(60);
                     Response.Redirect("Default.aspx");       
                 }
                 else

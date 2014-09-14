@@ -12,7 +12,7 @@ public partial class Forum_Delete_Reply : System.Web.UI.Page
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
         string html = "";
 
-        if (2 + 4 == 1) //TODO: Tjek user-level fra cookie
+        if (Response.Cookies["forumcookie"]["userlevel"] == "0")
         {
             try
             {

@@ -12,7 +12,7 @@ public partial class Forum_Delete_Topic : System.Web.UI.Page
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
         string html = "";
 
-        if (2 + 4 == 1)
+        if (Response.Cookies["forumcookie"]["userlevel"] == "0")
         {
             try
             {
