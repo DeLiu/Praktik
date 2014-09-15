@@ -9,3 +9,4 @@ JTM/Web.config
 JTM/AdminRequiredContent/EditCategory.aspx
 JTM/AdminRequiredContent/EditCategory.aspx.cs
 JTM/Web.config
+*.webinfo
