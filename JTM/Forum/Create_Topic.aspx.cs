@@ -20,7 +20,7 @@ public partial class Forum_Create_Topic : System.Web.UI.Page
             try
             {
                 db.Open();
-                db.Exec("INSERT INTO topics (topic_subject, topic_date, topic_cat, topic_by, topic_locked) VALUES('" + txtEmne.Text + "', GETDATE(), " + ddlSubforum.SelectedIndex + ", 1, 0)"); //TODO: Userid fra cookie, de rigtige subforum-ID'er.
+                db.Exec("INSERT INTO topics (topic_subject, topic_date, topic_cat, topic_by, topic_locked) VALUES('" + txtEmne.Text + "', GETDATE(), " + ddlSubforum.SelectedIndex + ", " + Response.Cookies["forumcookie"]["userid"] + ", 0)"); //TODO: De rigtige subforum-ID'er, skal hentes i dropdownlisten.
             }
             catch (Exception ex)
             {

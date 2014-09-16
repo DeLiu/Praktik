@@ -18,14 +18,15 @@ public partial class Forum_Login : System.Web.UI.Page
         try
         {
             Db.Open();
-            string[][] getuser = Db.Query("SELECT user_name, user_pass, userlevel FROM Users where user_name = '" + username.Value + "'");
+            string[][] getuser = Db.Query("SELECT user_id, user_name, user_pass, userlevel FROM Users where user_name = '" + username.Value + "'");
             for (int i = 0; i < getuser.Length; i++)
             {
-                if (PasswordHash.ValidatePassword(password.Value, getuser[i][1]) == true)
+                if (PasswordHash.ValidatePassword(password.Value, getuser[i][2]) == true)
                 {
                     HttpCookie cookie = new HttpCookie("forumcookie");
-                    cookie.Values.Add("username", getuser[i][0]);
-                    cookie.Values.Add("userlevel", getuser[i][2]);
+                    cookie.Values.Add("userid", getuser[i][0]);
+                    cookie.Values.Add("username", getuser[i][1]);
+                    cookie.Values.Add("userlevel", getuser[i][3]);
                     cookie.Expires = DateTime.Now.AddDays(60);
                     Response.Redirect("Default.aspx");       
                 }
