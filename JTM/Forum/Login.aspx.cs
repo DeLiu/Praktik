@@ -43,7 +43,11 @@ public partial class Forum_Login : System.Web.UI.Page
         finally
         {
             Db.Close();
-            Response.Redirect("Default.aspx"); 
+            username.Visible = false;
+            password.Visible = false;
+            Button1.Visible = false;
+
+            content.InnerHtml = "Du er nu logget ind. Klik <a href='Default.aspx'>her</a> for at vende tilbage til forsiden.";
         }
     }
 }
