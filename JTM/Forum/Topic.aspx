@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" Runat="Server">
     <form id="form1" runat="server">
     <div id="content" runat="server">
-        
     </div>
     <div>
         <textarea id="reply" runat="server"></textarea>
