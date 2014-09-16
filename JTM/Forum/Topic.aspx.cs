@@ -29,7 +29,7 @@ public partial class Forum_Topic : System.Web.UI.Page
             {
                 html += "<tr>";
                 html += "<th>Skrevet af: " + getPos[i][6] + " d. " + getPos[i][2];
-                if (Response.Cookies["forumcookie"]["userlevel"] == "0")
+                if (Request.Cookies["forumcookie"]["userlevel"] == "0")
                 {
                     html += " <a class='item' href='Delete_Reply.aspx?id=" + getPos[i][4] + "'>Slet indlæg</a>";
                 }
