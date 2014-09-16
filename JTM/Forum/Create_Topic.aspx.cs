@@ -13,14 +13,14 @@ public partial class Forum_Create_Topic : System.Web.UI.Page
     }
     protected void btnOpret_Click(object sender, EventArgs e)
     {
-        if (Response.Cookies["forumcookie"]["username"] != null)
+        if (Request.Cookies["forumcookie"]["username"] != null)
         {
             SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", ""); 
 
             try
             {
                 db.Open();
-                db.Exec("INSERT INTO topics (topic_subject, topic_date, topic_cat, topic_by, topic_locked) VALUES('" + txtEmne.Text + "', GETDATE(), " + ddlSubforum.SelectedIndex + ", " + Response.Cookies["forumcookie"]["userid"] + ", 0)"); //TODO: De rigtige subforum-ID'er, skal hentes i dropdownlisten.
+                db.Exec("INSERT INTO topics (topic_subject, topic_date, topic_cat, topic_by, topic_locked) VALUES('" + txtEmne.Text + "', GETDATE(), " + ddlSubforum.SelectedIndex + ", " + Request.Cookies["forumcookie"]["userid"] + ", 0)"); //TODO: De rigtige subforum-ID'er, skal hentes i dropdownlisten.
             }
             catch (Exception ex)
             {

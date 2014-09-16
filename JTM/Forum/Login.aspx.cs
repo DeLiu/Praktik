@@ -28,7 +28,7 @@ public partial class Forum_Login : System.Web.UI.Page
                     cookie.Values.Add("username", getuser[i][1]);
                     cookie.Values.Add("userlevel", getuser[i][3]);
                     cookie.Expires = DateTime.Now.AddDays(60);
-                    Response.Redirect("Default.aspx");       
+                    Response.Cookies.Add(cookie);
                 }
                 else
                 {
@@ -38,11 +38,12 @@ public partial class Forum_Login : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            
+            content.InnerHtml = Convert.ToString(ex);
         }
         finally
         {
             Db.Close();
+            Response.Redirect("Default.aspx"); 
         }
     }
 }

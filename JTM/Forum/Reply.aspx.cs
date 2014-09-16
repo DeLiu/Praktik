@@ -15,7 +15,7 @@ public partial class Forum_Reply : System.Web.UI.Page
         try
         {
             db.Open();
-            db.Exec("INSERT INTO posts(post_content, post_date, post_topic, post_by) VALUES ('" + Session["reply"] + "', GETDATE(), " + Request.QueryString["id"] + ", " + Response.Cookies["forumcookie"]["userid"] + ")"); //TODO: Userid fra cookie
+            db.Exec("INSERT INTO posts(post_content, post_date, post_topic, post_by) VALUES ('" + Session["reply"] + "', GETDATE(), " + Request.QueryString["id"] + ", " + Request.Cookies["forumcookie"]["userid"] + ")"); //TODO: Userid fra cookie
             html += "Dit indlæg er gemt, se det <a href='Topic.aspx?id=" + Request.QueryString["id"] + "'>her</a>.";
         }
         catch (Exception ex)

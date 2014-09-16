@@ -12,7 +12,7 @@ public partial class Forum_Lock_Topic : System.Web.UI.Page
         SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
         string html = "";
 
-        if (Response.Cookies["forumcookie"]["userlevel"] == "0")
+        if (Request.Cookies["forumcookie"]["userlevel"] == "0")
         {
             try
             {
