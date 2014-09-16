@@ -10,22 +10,31 @@ public partial class AdminRequiredContent_EditProfilePage : System.Web.UI.Page
     SQLDatabase DB = new SQLDatabase("JTM.mdf", "LocalDB", "", "");
     protected void Page_Load(object sender, EventArgs e)
     {
-        /*
-        DB.Open();
-        DB.Exec("INSERT INTO profileinfo (Id, profile) VALUES (1, '" + profilEditTextBox.Text + "')");
-        DB.Close();
-        */
+        if (!IsPostBack)
+        {
+            try
+            {
+                DB.Open();
+                string[][] profileArray = DB.Query("SELECT profile FROM profileinfo WHERE Id=1");
+                profilEditTextBox.Text = profileArray[0][0];
 
-        DB.Open();
-        string[][] profileArray = DB.Query("SELECT profile FROM profileinfo WHERE Id=1");
+            }
+            catch (Exception ex)
+            {
+                
+            }
+            finally
+            {
 
-        profilEditTextBox.Text = profileArray[0][0].ToString();
-        DB.Close();
+                DB.Close();
+            }
+        }       
     }
     protected void Save_button_Click(object sender, EventArgs e)
     {
-        DB.Open();
-        DB.Exec("UPDATE profileinfo SET profile='" + profilEditTextBox.Text + "' WHERE Id=1");
-        DB.Close();
+                DB.Open();
+                DB.Exec("UPDATE profileinfo SET profile='" + profilEditTextBox.Text + "' WHERE Id=1 IF @@ROWCOUNT=0 INSERT INTO profileinfo (Id, profile) VALUES (1, '" + profilEditTextBox.Text + "')");
+                DB.Close();
+         
     }
 }
