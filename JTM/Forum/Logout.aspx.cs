@@ -11,7 +11,9 @@ public partial class Forum_Logout : System.Web.UI.Page
     {
         if (Request.Cookies["forumcookie"] != null)
         {
+            HttpCookie cookie = new HttpCookie("forumcookie");
             Response.Cookies["forumcookie"].Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(cookie);
         }
         else
         {
