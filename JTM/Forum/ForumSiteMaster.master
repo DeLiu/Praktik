@@ -6,7 +6,7 @@
 
 </script>
 <% 
-   if (Request.Cookies["forumcookie"]["username"] != null && Request.Cookies["forumcookie"]["userlevel"] != null)
+   if (Request.Cookies["forumcookie"] != null)
    {
        userbar.InnerHtml = "Velkommen " + Request.Cookies["forumcookie"]["username"] +". <a class='item' href=logout.aspx>Log ud</a>.";
    }
