@@ -15,6 +15,15 @@ public class SQLDatabase
     private string dbUsername = "";
     private string dbPassword = "";
     private SqlConnection dbConn;
+
+    /// <summary>
+    /// A class for SQL Connections of any kind.
+    /// </summary>
+    /// <param name="dbNavn">The name of the database. E.g. bankDatabase or bankDatabase.mdf.</param>
+    /// <param name="dbServer">The name of the server. E.g. Localhost, ip-adress or LocalDB.</param>
+    /// <param name="dbUsername">The username used for the login.</param>
+    /// <param name="dbPassword">The password used for the login.</param>
+
     public SQLDatabase(string dbNavn, string dbServer, string dbUsername, string dbPassword)
     {
         this.dbNavn = dbNavn;
@@ -23,6 +32,9 @@ public class SQLDatabase
         this.dbPassword = dbPassword;
     }
 
+    /// <summary>
+    /// Opens the connection to the SQL Server
+    /// </summary>
     public bool Open()
     {
         try
@@ -40,6 +52,11 @@ public class SQLDatabase
         }
     }
 
+    /// <summary>
+    /// Sends an SQL command to the SQL Server
+    /// </summary>
+    /// <param name="SQLQuery">The SQL Command you want the server to execute.</param>
+    
     public int Exec(string SQLQuery)
     {
         SqlCommand dbCMD = new SqlCommand(SQLQuery, this.dbConn);   //Forbered en ny SQL statement
@@ -63,6 +80,11 @@ public class SQLDatabase
         }
     }
 
+    /// <summary>
+    /// Performs a query on the SQL Server
+    /// </summary>
+    /// <param name="SQLQuery">The Query Command.</param>
+    /// <returns>Returns a jagged array e.g. yourString[column][row] of the table's data.</returns>
     public string[][] Query(string SQLQuery)
     {
         SqlCommand dbCMD = new SqlCommand(SQLQuery, this.dbConn);
@@ -96,6 +118,9 @@ public class SQLDatabase
         return Result;
     }
 
+    /// <summary>
+    /// Closes the SQL connection.
+    /// </summary>
     public void Close()
     {
         this.dbConn.Close();
