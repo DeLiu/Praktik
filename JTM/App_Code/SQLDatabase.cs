@@ -20,7 +20,7 @@ public class SQLDatabase
     /// A class for SQL Connections of any kind.
     /// </summary>
     /// <param name="dbNavn">The name of the database. E.g. bankDatabase or bankDatabase.mdf.</param>
-    /// <param name="dbServer">The name of the server. E.g. Localhost, ip-adress or LocalDB.</param>
+    /// <param name="dbServer">The name of the server. E.g. Localhost, IP-address or LocalDB.</param>
     /// <param name="dbUsername">The username used for the login.</param>
     /// <param name="dbPassword">The password used for the login.</param>
 
@@ -53,7 +53,7 @@ public class SQLDatabase
     }
 
     /// <summary>
-    /// Sends an SQL command to the SQL Server
+    /// Sends an SQL command to the SQL Server.
     /// </summary>
     /// <param name="SQLQuery">The SQL Command you want the server to execute.</param>
     
@@ -81,7 +81,7 @@ public class SQLDatabase
     }
 
     /// <summary>
-    /// Performs a query on the SQL Server
+    /// Performs a query on the SQL Server.
     /// </summary>
     /// <param name="SQLQuery">The Query Command.</param>
     /// <returns>Returns a jagged array e.g. yourString[column][row] of the table's data.</returns>
