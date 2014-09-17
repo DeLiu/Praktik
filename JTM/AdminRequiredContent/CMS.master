@@ -39,6 +39,7 @@
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/Default.aspx" Text="Indeks" Value="Indeks"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditProfilePage.aspx" Text="Profil" Value="Profil"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditProductPage.aspx" Text="Produkter" Value="Produkter"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditContact.aspx" Text="Kontaktinformation" Value="Kontaktinformation"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditLinks.aspx" Text="Links" Value="Links"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditCategory.aspx" Text="Forum - Kategori" Value="Forum - Kategori"></asp:MenuItem>
                     </Items>

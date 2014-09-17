@@ -104,6 +104,10 @@ td {
     width : 100px;
 }
 
+.ContentTable .contentCell {
+    column-span : 2;
+}
+
 .buttonCell {
     width: 50px;
 }
