@@ -15,7 +15,7 @@ public partial class Forum_Create_Cat : System.Web.UI.Page
     {
         if (Request.Cookies["forumcookie"] != null && subname != null && subdesc != null)
         {
-            if (Request.Cookies["forumcookie"]["userlevel"] == "1")
+            if (Request.Cookies["forumcookie"]["userlevel"] == "0")
             {
                 SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
                 db.Open();

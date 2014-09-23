@@ -32,7 +32,7 @@ public partial class Forum_Default : System.Web.UI.Page
             }
             if (Request.Cookies["forumcookie"] != null)
             {
-                if (Request.Cookies["forumcookie"]["userlevel"] == "1")
+                if (Request.Cookies["forumcookie"]["userlevel"] == "0")
                 {
                     html += "<tr><td class='leftpart'><h3><a href='Create_Cat.aspx'>Opret nyt subforum</a></h3></td></tr>'";
                 }
