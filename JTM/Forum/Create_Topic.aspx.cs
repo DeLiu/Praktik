@@ -13,7 +13,7 @@ public partial class Forum_Create_Topic : System.Web.UI.Page
     }
     protected void btnOpret_Click(object sender, EventArgs e)
     {
-        if (Request.Cookies["forumcookie"]["username"] != null)
+        if (Request.Cookies["forumcookie"] != null)
         {
             SQLDatabase db = new SQLDatabase("ForumDB.mdf", "LocalDB", "", ""); 
 

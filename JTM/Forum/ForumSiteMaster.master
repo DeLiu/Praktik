@@ -17,6 +17,7 @@
    {
        userbar.InnerHtml = "<a class='item' href=Login.aspx>Log ind</a> <a class='item' href=SignUp.aspx>Opret bruger</a>";
    }
+   
 %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

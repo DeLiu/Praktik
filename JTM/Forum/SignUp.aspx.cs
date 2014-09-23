@@ -27,7 +27,7 @@ public partial class Forum_SignUp : System.Web.UI.Page
                 try
                 {
                     db.Open();
-                    db.Exec("INSERT INTO Users(user_name, user_pass, user_email, user_date, userlevel) VALUES('" + txtUsername.Text + "', '" + password + "', '" + txtMail.Text + "', GETDATE(), 1)");
+                    db.Exec("INSERT INTO Users(user_name, user_pass, user_email, user_date, userlevel) VALUES('" + txtUsername.Text + "', '" + password + "', '" + txtMail.Text + "', GETDATE(), 0)");
                 }
                 catch (Exception ex)
                 {
