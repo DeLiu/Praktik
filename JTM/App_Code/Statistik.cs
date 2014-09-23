@@ -42,7 +42,7 @@ public class Statistik
             DB.Open();
             string[][] getIps = DB.Query("SELECT * FROM ips");
 
-            for (int i = 0; i < getIps.Count; i++)
+            for (int i = 0; i < getIps.Length; i++)
             {
                 ips++;
             }
