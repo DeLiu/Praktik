@@ -34,13 +34,27 @@ public class Statistik
         }
     }
 
-    public string[][] GetAllIps()
+    public int GetIpCount()
     {
-        string[][] ips;
+        int ips = 0;
+        try
+        {
+            DB.Open();
+            string[][] getIps = DB.Query("SELECT * FROM ips");
 
-        DB.Open();
-        ips = DB.Query("SELECT * FROM ips");
-        DB.Close();
+            for (int i = 0; i < getIps.Count; i++)
+            {
+                ips++;
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+            DB.Close();
+        }
 
         return ips;
     }
