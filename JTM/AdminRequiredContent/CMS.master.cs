@@ -9,7 +9,8 @@ public partial class AdminRequiredContent_CMS : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Statistik sk = new Statistik();
+        sk.Add(HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
     }
 
     protected void Log_out(object sender, LoginCancelEventArgs e)

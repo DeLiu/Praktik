@@ -66,7 +66,8 @@ public partial class SiteMaster : MasterPage
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Statistik sk = new Statistik();
+        sk.Add(HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
     }
 
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
