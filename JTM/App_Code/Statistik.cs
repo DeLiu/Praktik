@@ -31,7 +31,7 @@ public class Statistik
             foreach (CultureInfo ci in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
             {
                 RegionInfo ri = new RegionInfo(ci.Name);
-                DB.Exec("INSERT INTO ips VALUES('" + Sha256(ip) + "', '" + ri.EnglishName + "')");
+                DB.Exec("INSERT INTO ips VALUES('" + ri.EnglishName + "', '" + Sha256(ip) + "')");
             }
         }
         catch (Exception ex)
