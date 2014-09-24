@@ -6,7 +6,7 @@ using System.Text;
 using System.Web;
 
 /// <summary>
-/// Summary description for Statistik
+/// Á class handling all statistic actions on the website.
 /// </summary>
 public class Statistik
 {
@@ -17,6 +17,11 @@ public class Statistik
 		
 	}
 
+    /// <summary>
+    /// Adds an SHA256 encrypted IP to the database.
+    /// </summary>
+    /// <param name="ip">The ip which you want added to the database.</param>
+    
     public void Add(string ip) //TODO: Land.
     {
         try
@@ -33,6 +38,10 @@ public class Statistik
             DB.Close();
         }
     }
+
+    /// <summary>
+    /// Gets and returns the number of IP addresses from the database.
+    /// </summary>
 
     public int GetIpCount()
     {
@@ -58,6 +67,11 @@ public class Statistik
 
         return ips;
     }
+
+    /// <summary>
+    /// A method that hashes string in the SHA256 format.
+    /// </summary>
+    /// <param name="value">The string you wish hashed.</param>
 
     public string Sha256(string value)
     {
