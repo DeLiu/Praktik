@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -27,7 +28,11 @@ public class Statistik
         try
         {
             DB.Open();
-            DB.Exec("INSERT INTO ips VALUES('" + Sha256(ip) + "')");
+            foreach (CultureInfo ci in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
+            {
+                RegionInfo ri = new RegionInfo(ci.Name);
+                DB.Exec("INSERT INTO ips VALUES('" + Sha256(ip) + "', '" + ri.EnglishName + "')");
+            }
         }
         catch (Exception ex)
         {
