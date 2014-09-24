@@ -14,21 +14,27 @@
                             <label runat="server">Produktsnavn: </label>
                         </td>
                         <td>
-                            <asp:TextBox ID="navnTextbox" runat="server"></asp:TextBox></td>
+                            <asp:TextBox ID="navnTextbox" runat="server"></asp:TextBox><br />
+                            <asp:RequiredFieldValidator ID="ProductValidator" runat="server" ControlToValidate="navnTextbox" ErrorMessage="Mangler produktsnavn." ForeColor="Red"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td class="titleCell">
                             <label runat="server">Mængde: </label>
                         </td>
                         <td>
-                            <asp:TextBox ID="amountTextBox" runat="server"></asp:TextBox></td>
+                            <asp:TextBox ID="amountTextBox" runat="server"></asp:TextBox><br />
+                            <asp:RequiredFieldValidator ID="AmountValidator" runat="server" ControlToValidate="amountTextBox" ErrorMessage="Mangler mængde." ForeColor="Red"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td class="titleCell">
                             <label title="Pris excl. moms" runat="server">Pris: </label>
                         </td>
                         <td>
-                            <asp:TextBox ID="prisTextbox" runat="server" TextMode="Number"></asp:TextBox></td>
+                            <asp:TextBox ID="prisTextbox" runat="server" TextMode="Number"></asp:TextBox><br />
+                            <asp:RequiredFieldValidator ID="PriceValidator" runat="server" ControlToValidate="prisTextbox" ErrorMessage="Mangler prissætning." ForeColor="Red"></asp:RequiredFieldValidator>
+                        </td>
                     </tr>
                     <tr>
                         <td class="titleCell">
