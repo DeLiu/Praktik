@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
-    <p>
-        Denne side kommer til at indeholde sidestatistik.</p>
+    <div id="content" runat="server"></div>
 </asp:Content>
 

@@ -56,10 +56,7 @@ public class Statistik
             DB.Open();
             string[][] getIps = DB.Query("SELECT * FROM ips");
 
-            for (int i = 0; i < getIps.Length; i++)
-            {
-                ips++;
-            }
+            ips = getIps.Length + 1;
         }
         catch (Exception ex)
         {
@@ -74,7 +71,7 @@ public class Statistik
     }
 
     /// <summary>
-    /// A method that hashes string in the SHA256 format.
+    /// A method that hashes a string in the SHA256 format.
     /// </summary>
     /// <param name="value">The string you wish hashed.</param>
 

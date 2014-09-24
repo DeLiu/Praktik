@@ -9,6 +9,8 @@ public partial class AdminRequiredContent_Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Statistik sk = new Statistik();
 
+        content.InnerHtml = "Du har pt. haft " + sk.GetIpCount() + " besøgende på dit website.";
     }
 }
