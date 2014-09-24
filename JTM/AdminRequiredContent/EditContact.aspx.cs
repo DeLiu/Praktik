@@ -21,8 +21,8 @@ public partial class AdminRequiredContent_EditContact : System.Web.UI.Page
                 PostalTextBox.Text = contactsArray[0][2].ToString();
                 CityTextBox.Text = contactsArray[0][3].ToString();
                 PhoneTextBox.Text = contactsArray[0][4].ToString();
-                HandphoneTexbox.Text = contactsArray[0][5].ToString();
-
+                HandphoneTextbox.Text = contactsArray[0][5].ToString();
+                EmailTextBox.Text = contactsArray[0][6].ToString();
             }
             catch (Exception ex)
             {
@@ -38,9 +38,9 @@ public partial class AdminRequiredContent_EditContact : System.Web.UI.Page
     {
         DB.Open();
         DB.Exec("UPDATE contacts SET address='" + AddressTextBox.Text + "', postnr=" + PostalTextBox.Text + 
-            ", city='" + CityTextBox.Text + "', tlf='" + PhoneTextBox.Text + "', mobile='" + HandphoneTexbox.Text + "' WHERE Id=1" +
-            "IF @@ROWCOUNT=0 INSERT INTO contacts (Id, address, postnr, city, tlf, mobile) " +
-            "VALUES (1, '"+ AddressTextBox.Text +"', "+ PostalTextBox.Text +", '"+ CityTextBox.Text +"', '"+ PhoneTextBox.Text +"', '"+ HandphoneTexbox.Text +"')");
+            ", city='" + CityTextBox.Text + "', tlf='" + PhoneTextBox.Text + "', mobile='" + HandphoneTextbox.Text + "', email='" + EmailTextBox.Text + "' WHERE Id=1" +
+            "IF @@ROWCOUNT=0 INSERT INTO contacts (Id, address, postnr, city, tlf, mobile, email) " +
+            "VALUES (1, '"+ AddressTextBox.Text +"', "+ PostalTextBox.Text +", '"+ CityTextBox.Text +"', '"+ PhoneTextBox.Text +"', '"+ HandphoneTextbox.Text +"', '"+ EmailTextBox.Text +"')");
         DB.Close();
     }
 }

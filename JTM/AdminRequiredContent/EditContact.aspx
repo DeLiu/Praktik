@@ -44,7 +44,14 @@
                         <label runat="server">Mobil: </label>
                     </td>
                     <td colspan="2">
-                        <asp:TextBox ID="HandphoneTexbox" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="HandphoneTextbox" runat="server"></asp:TextBox></td>
+                </tr>
+                                <tr>
+                    <td class="titleCell">
+                        <label runat="server">E-Mail: </label>
+                    </td>
+                    <td colspan="2">
+                        <asp:TextBox ID="EmailTextBox" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td></td>

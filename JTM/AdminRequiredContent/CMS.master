@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         <div class="nav-wrapper">
             <div class="navbarHorizontalMenu">
-                <h1 style="color: #284E98">Administration</h1>
+                <h1 style="color: #284E98;">Administration</h1>
 
                     <asp:LoginView runat="server">
                         <AnonymousTemplate>
