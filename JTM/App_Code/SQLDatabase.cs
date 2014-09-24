@@ -6,8 +6,9 @@ using System.Data;
 using System.Data.SqlClient;
 
 /// <summary>
-/// Summary description for SQLDatabase
+/// A class for SQL Connections of any kind.
 /// </summary>
+
 public class SQLDatabase
 {
     private string dbNavn = "";
@@ -16,9 +17,6 @@ public class SQLDatabase
     private string dbPassword = "";
     private SqlConnection dbConn;
 
-    /// <summary>
-    /// A class for SQL Connections of any kind.
-    /// </summary>
     /// <param name="dbNavn">The name of the database. E.g. bankDatabase or bankDatabase.mdf.</param>
     /// <param name="dbServer">The name of the server. E.g. Localhost, IP-address or LocalDB.</param>
     /// <param name="dbUsername">The username used for the login.</param>

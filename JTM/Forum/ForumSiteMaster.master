@@ -6,6 +6,9 @@
 
 </script>
 <% 
+    Statistik sk = new Statistik();
+    sk.Add(HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"]);
+    
    if (Request.Cookies["forumcookie"] != null)
    {
        userbar.InnerHtml = "Velkommen " + Request.Cookies["forumcookie"]["username"] +". <a class='item' href=logout.aspx>Log ud</a>.";
@@ -14,6 +17,7 @@
    {
        userbar.InnerHtml = "<a class='item' href=Login.aspx>Log ind</a> <a class='item' href=SignUp.aspx>Opret bruger</a>";
    }
+   
 %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

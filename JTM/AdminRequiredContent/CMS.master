@@ -42,6 +42,7 @@
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditContact.aspx" Text="Kontaktinformation" Value="Kontaktinformation"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditLinks.aspx" Text="Links" Value="Links"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/AdminRequiredContent/EditCategory.aspx" Text="Forum - Kategori" Value="Forum - Kategori"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/AdminRequiredContent/Statistik.aspx" Text="Statistik" Value="Statistik"></asp:MenuItem>
                     </Items>
                     <StaticHoverStyle BackColor="#284E98" ForeColor="White" Width="90%"/>
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

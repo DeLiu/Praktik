@@ -30,6 +30,13 @@ public partial class Forum_Default : System.Web.UI.Page
                 html += "</td>";
                 html += "</tr>";
             }
+            if (Request.Cookies["forumcookie"] != null)
+            {
+                if (Request.Cookies["forumcookie"]["userlevel"] == "0")
+                {
+                    html += "<tr><td class='leftpart'><h3><a href='Create_Cat.aspx'>Opret nyt subforum</a></h3></td></tr>'";
+                }
+            }
         }
         catch (Exception ex)
         {
@@ -37,6 +44,7 @@ public partial class Forum_Default : System.Web.UI.Page
         }
         finally
         {
+            
             content.InnerHtml = html;
             db.Close();
         }
