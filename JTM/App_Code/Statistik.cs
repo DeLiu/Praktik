@@ -7,8 +7,9 @@ using System.Text;
 using System.Web;
 
 /// <summary>
-/// Á class handling all statistic actions on the website.
+/// A class handling all statistic actions of the website.
 /// </summary>
+
 public class Statistik
 {
     SQLDatabase DB = new SQLDatabase("JTM.mdf", "LocalDB", "", "");
@@ -21,18 +22,23 @@ public class Statistik
     /// <summary>
     /// Adds an SHA256 encrypted IP to the database.
     /// </summary>
-    /// <param name="ip">The ip which you want added to the database.</param>
+    /// <param name="ip">The IP which you want added to the database.</param>
     
-    public void Add(string ip) //TODO: Land.
+    public void Add(string ip)
     {
         try
         {
             DB.Open();
+            DB.Exec("INSERT INTO ips VALUES('Danmark', '" + Sha256(ip) + "')");
+
+            /* TODO: Fix this shit, currently spamming the DB with lots of land names.
+            
             foreach (CultureInfo ci in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
             {
                 RegionInfo ri = new RegionInfo(ci.Name);
                 DB.Exec("INSERT INTO ips VALUES('" + ri.EnglishName + "', '" + Sha256(ip) + "')");
             }
+             */
         }
         catch (Exception ex)
         {
