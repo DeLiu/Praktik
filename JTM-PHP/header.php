@@ -11,9 +11,16 @@
 <h1>JTM-Landbrug - Forum</h1>
     <div id="wrapper">
     <div id="menu">
-        <a class="item" href="index.php">Hjem</a> -
-        <a class="item" href="create_topic.php">Opret en tråd</a> -
-        <a class="item" href="create_cat.php">Opret et subforum</a>
+        <a class="item" href="index.php">Hjem</a>
+		<?php
+		if ($_SESSION['user_level'] == 0)
+		{
+		echo '
+			<a class="item" href="create_topic.php">Opret en tråd</a> -
+			<a class="item" href="create_cat.php">Opret et subforum</a>
+			';
+		}
+		?>
          
         <div id="userbar">
         <?php
