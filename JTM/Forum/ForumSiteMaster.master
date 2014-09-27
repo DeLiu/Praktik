@@ -21,6 +21,8 @@
 %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta name="description" content="Et forum omkring økologi og landbrug" />
+    <meta name="keywords" content="agriculture, økologi, landbrug, ecology" />
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>

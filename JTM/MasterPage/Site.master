@@ -6,6 +6,8 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JTM-Landbrug - et økologisk landbrug" />
+    <meta name="keywords" content="agriculture, økologi, landbrug, ecology" />
     <title>JTM-Landbrug</title>
 
     <asp:PlaceHolder runat="server">
