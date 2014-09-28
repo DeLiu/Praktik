@@ -32,9 +32,12 @@ public partial class AdminRequiredContent_EditProfilePage : System.Web.UI.Page
     }
     protected void Save_button_Click(object sender, EventArgs e)
     {
-                DB.Open();
-                DB.Exec("UPDATE profileinfo SET profile='" + profilEditTextBox.Text + "' WHERE Id=1 IF @@ROWCOUNT=0 INSERT INTO profileinfo (Id, profile) VALUES (1, '" + profilEditTextBox.Text + "')");
-                DB.Close();
-         
+        string profileText = profilEditTextBox.Text;
+
+        DB.Open();
+        DB.Exec("UPDATE profileinfo SET profile='" + profileText + "' WHERE Id=1 IF @@ROWCOUNT=0 INSERT INTO profileinfo (Id, profile) VALUES (1, '" + profileText + "')");
+        DB.Close();
+
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "success", "alert('Profilen er nu gemt.'); setInterval(function(){location.href='EditProfilePage.aspx';},3000);", true);
     }
 }

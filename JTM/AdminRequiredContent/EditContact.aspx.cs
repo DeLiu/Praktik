@@ -36,11 +36,20 @@ public partial class AdminRequiredContent_EditContact : System.Web.UI.Page
     }
     protected void Save_button_Click(object sender, EventArgs e)
     {
+        string address = AddressTextBox.Text;
+        string postal = PostalTextBox.Text;
+        string city = CityTextBox.Text;
+        string phone = PhoneTextBox.Text;
+        string mobile = HandphoneTextbox.Text;
+        string mail = EmailTextBox.Text;
+
         DB.Open();
-        DB.Exec("UPDATE contacts SET address='" + AddressTextBox.Text + "', postnr=" + PostalTextBox.Text + 
-            ", city='" + CityTextBox.Text + "', tlf='" + PhoneTextBox.Text + "', mobile='" + HandphoneTextbox.Text + "', email='" + EmailTextBox.Text + "' WHERE Id=1" +
+        DB.Exec("UPDATE contacts SET address='" + address + "', postnr=" + postal + 
+            ", city='" + city + "', tlf='" + phone + "', mobile='" + mobile + "', email='" + mail + "' WHERE Id=1" +
             "IF @@ROWCOUNT=0 INSERT INTO contacts (Id, address, postnr, city, tlf, mobile, email) " +
-            "VALUES (1, '"+ AddressTextBox.Text +"', "+ PostalTextBox.Text +", '"+ CityTextBox.Text +"', '"+ PhoneTextBox.Text +"', '"+ HandphoneTextbox.Text +"', '"+ EmailTextBox.Text +"')");
+            "VALUES (1, '"+ address +"', "+ postal +", '"+ city +"', '"+ phone +"', '"+ mobile +"', '"+ mail +"')");
         DB.Close();
+
+        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "success", "alert('Kontakt er nu gemt.'); setInterval(function(){location.href='EditProfilePage.aspx';},3000);", true);
     }
 }

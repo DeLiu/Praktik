@@ -5,37 +5,49 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    min-width : 1600px;
 }
 
 .navbarHorizontalMenu {
+    position : fixed;
+    top : 0;
+    left : 0;
+    right : 0;
+    z-index : 100;
+    height : 97px;
+    width : 100%;
     background-color: #c0ccd0;
     padding : 20px 20px;
     border-bottom: 3px groove grey;
 }
 
 .navbarMenu {
-    position : relative;
+    position: fixed;
+    top: 140px;
+    left: 0;
+    bottom : 0;
+    z-index: 100;
     background-color: #c0ccd0;
     border-right: 3px groove grey;
-    width: 10%;
-    height: 100%;
+    width: 157px;
+    height : auto;
     float: left;
-    min-width : 150px;
 }
 
 .loginBox {
-    float : right;
-    right : 0;
+    position : absolute;
+    right : 100px;
 }
 
 .outerContentHolder {
-    position : relative;
+    position : fixed;
+    top : 140px;
+    left : 160px;
+    bottom : 0;
     background-color: #c0ccd0;
-    float: left;
-    height: 100%;
     padding : 0 8%;
-    width: 73.8%;
+    width: auto;
+    overflow : auto;
+    right : 0;
 }
 
 .tableHead {
@@ -45,16 +57,17 @@
 .innerContentHolder {
     background-color: #8cafc2;
     border-radius: 10px;
+    padding-top: 3px;
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
     min-width: 300px;
+    margin-bottom: 20px;
 }
 
 .content-wrapper {
     width: 100%;
     padding-top: 20px;
-    min-width : 1100px;
 }
 
 .content-wrapper .columnHolder-left {
@@ -67,6 +80,7 @@
     width : 30%;
     margin-right : 20px;
     min-width : 320px;
+    margin-bottom : 20px;
 }
 
 .content-wrapper .columnholder-right {
@@ -78,6 +92,7 @@
     float : left;
     width : auto;
     max-width : 60%;
+    margin-bottom : 20px;
 }
 
 .contentHolder {
