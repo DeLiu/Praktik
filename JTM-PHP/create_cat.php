@@ -2,7 +2,7 @@
 include 'connect.php';
 include 'header.php';
  
-if($_SERVER['REQUEST_METHOD'] != 'POST')
+if(($_SERVER['REQUEST_METHOD'] != 'POST') && ($_SESSION['user_level'] == 0))
 {
     //the form hasn't been posted yet, display it
     echo "<form method='post' action=''>

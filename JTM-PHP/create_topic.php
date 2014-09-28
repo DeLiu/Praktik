@@ -3,7 +3,7 @@ include 'connect.php';
 include 'header.php';
  
 echo '<h2>Opret en tråd</h2>';
-if (isset($_SESSION['signed_in']) == false)
+if (isset($_SESSION['user_level']) == 0)
 {
     //the user is not signed in
     echo 'Du skal være <a href="signin.php">logget ind</a>, før du kan oprette en tråd.';
