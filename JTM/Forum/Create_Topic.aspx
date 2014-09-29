@@ -8,12 +8,9 @@
         <h2>Opret en tråd</h2>
         <p>Emne:
             <asp:TextBox ID="txtEmne" runat="server"></asp:TextBox>
-&nbsp;Subforum:
-            <asp:DropDownList ID="ddlSubforum" runat="server" DataSourceID="forumDataSource" DataTextField="cat_name" DataValueField="cat_name">
-            </asp:DropDownList>
-&nbsp;Besked:</p>
+        </p>
         <p>
-            <asp:TextBox ID="txtContent" runat="server" Height="167px" Width="399px" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="txtContent" runat="server" Height="167px" Width="399px" TextMode="MultiLine">Trådens indhold her.</asp:TextBox>
 &nbsp;</p>
         <p>
             <asp:Button ID="btnOpret" runat="server" OnClick="btnOpret_Click" Text="Opret tråd" />
