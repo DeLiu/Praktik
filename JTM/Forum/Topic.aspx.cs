@@ -29,13 +29,16 @@ public partial class Forum_Topic : System.Web.UI.Page
             {
                 html += "<tr>";
                 html += "<th>Skrevet af: " + getPos[i][6] + " d. " + getPos[i][2];
-                if (Request.Cookies["forumcookie"]["userlevel"] == "0")
+                if (Request.Cookies["forumcookie"] != null)
                 {
-                    html += " <a class='item' href='Delete_Reply.aspx?id=" + getPos[i][4] + "'>Slet indlæg</a>";
-                }
-                else
-                {
-                    html += "</th>";
+                    if (Request.Cookies["forumcookie"]["userlevel"] == "0")
+                    {
+                        html += " <a class='item' href='Delete_Reply.aspx?id=" + getPos[i][4] + "'>Slet indlæg</a>";
+                    }
+                    else
+                    {
+                        html += "</th>";
+                    }
                 }
                 html += "</tr>";
                 html += "<tr>";
@@ -64,7 +67,13 @@ public partial class Forum_Topic : System.Web.UI.Page
                     html += "<p style='color:red'>Denne tråd er blevet lukket af en administrator. Det er ikke længere muligt at oprette indlæg i denne.</p>";
                 }
             }
-                content.InnerHtml = html;
+            if (Request.Cookies["forumcookie"] == null)
+            {
+                reply.Visible = false;
+                Button1.Visible = false;
+                html += "<a class='item' href=Login.aspx>Log ind for at poste</a> ";
+            }
+            content.InnerHtml = html;
         }
     }
     
