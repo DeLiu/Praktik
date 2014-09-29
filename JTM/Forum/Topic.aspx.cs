@@ -46,7 +46,6 @@ public partial class Forum_Topic : System.Web.UI.Page
                 html += getPos[i][1];
                 html += "</td>";
                 html += "</tr>";
-
             }
         }
         catch (Exception ex)
@@ -71,7 +70,7 @@ public partial class Forum_Topic : System.Web.UI.Page
             {
                 reply.Visible = false;
                 Button1.Visible = false;
-                html += "<a class='item' href=Login.aspx>Log ind for at poste</a> ";
+                html += "<a class='item' href=Login.aspx>Log ind for at oprette et indlæg</a> ";
             }
             content.InnerHtml = html;
         }

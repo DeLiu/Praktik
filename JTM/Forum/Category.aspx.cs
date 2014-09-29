@@ -23,7 +23,7 @@ public partial class Forum_Topic : System.Web.UI.Page
                 html += "<h2>Tråde i " + getCat[i][1] + "-subforummet</h2>";
                 if (Request.Cookies["forumcookie"]["userlevel"] == "0")
                 {
-                    html += "<h3><a href='Create_topic.aspx?id=" + getCat[i][0] + "'>Opret ny tråd.</a>";
+                    html += "<h3><a class='item' href='Create_topic.aspx?id=" + getCat[i][0] + "'>Opret ny tråd</a>";
                 }
             }
 
