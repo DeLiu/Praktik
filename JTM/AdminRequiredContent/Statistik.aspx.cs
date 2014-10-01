@@ -13,4 +13,22 @@ public partial class AdminRequiredContent_Default2 : System.Web.UI.Page
 
         content.InnerHtml = "Du har pt. haft " + sk.GetIpCount() + " besøgende på dit website.";
     }
+    protected void btnRyd_Click(object sender, EventArgs e)
+    {
+        SQLDatabase DB = new SQLDatabase("JTM.mdf", "LocalDB", "", "");
+
+        try
+        {
+            DB.Open();
+            DB.Exec("DELETE * FROM ips");
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+            DB.Close();
+        }
+    }
 }

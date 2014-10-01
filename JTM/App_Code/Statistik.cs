@@ -24,21 +24,27 @@ public class Statistik
     /// </summary>
     /// <param name="ip">The IP which you want added to the database.</param>
     
-    public void Add(string ip)
+    public void Add(string ip, string browserName, string browserVersion, string browserPlatform)
     {
         try
         {
+            int uniqueIp = 0; //If the IP already exists in the DB, we will not add it again. We only want unique ips.
             DB.Open();
-            DB.Exec("INSERT INTO ips VALUES('Danmark', '" + Sha256(ip) + "')");
 
-            /* TODO: Fix this shit, currently spamming the DB with lots of land names.
-            
-            foreach (CultureInfo ci in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
+            string[][] getIp = DB.Query("SELECT * FROM ips");
+
+            for (int i = 0; i < getIp.Length; i++)
             {
-                RegionInfo ri = new RegionInfo(ci.Name);
-                DB.Exec("INSERT INTO ips VALUES('" + ri.EnglishName + "', '" + Sha256(ip) + "')");
+                if (getIp[i][1] == Sha256(ip))
+                {
+                    uniqueIp++;
+                }
             }
-             */
+
+                if (uniqueIp == 0)
+                {
+                    DB.Exec("INSERT INTO ips VALUES('" + Sha256(ip) + "', '" + browserName + "', '" + browserVersion + "', '" + browserPlatform + "')");
+                }
         }
         catch (Exception ex)
         {
@@ -62,7 +68,7 @@ public class Statistik
             DB.Open();
             string[][] getIps = DB.Query("SELECT * FROM ips");
 
-            ips = getIps.Length + 1;
+            ips = getIps.Length;
         }
         catch (Exception ex)
         {
