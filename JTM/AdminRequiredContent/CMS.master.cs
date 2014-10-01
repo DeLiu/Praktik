@@ -23,7 +23,7 @@ public partial class AdminRequiredContent_CMS : System.Web.UI.MasterPage
     {
         Statistik sk = new Statistik();
         HttpBrowserCapabilities browser = Request.Browser;
-        sk.Add(HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"], browser.Browser, browser.Version, browser.Platform);
+        sk.Add(HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"], browser.Browser, browser.Version, browser.Platform);
     }
 
     protected void Log_out(object sender, LoginCancelEventArgs e)

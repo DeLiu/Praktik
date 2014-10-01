@@ -68,7 +68,7 @@ public partial class SiteMaster : MasterPage
     {
         Statistik sk = new Statistik();
         HttpBrowserCapabilities browser = Request.Browser;
-        sk.Add(HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"], browser.Browser, browser.Version, browser.Platform);
+        sk.Add(HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"], browser.Browser, browser.Version, browser.Platform);
     }
 
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
