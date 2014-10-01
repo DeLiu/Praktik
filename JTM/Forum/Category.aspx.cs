@@ -42,8 +42,8 @@ public partial class Forum_Topic : System.Web.UI.Page
                 {
                     if (Request.Cookies["forumcookie"]["userlevel"] == "0")
                     {
-                        html += " <a class='item' href='Delete_Topic.aspx?id='" + getTop[i][0] + "'>Slet tråd</a>";
-                        html += "<a class='item' href='Lock_Topic.aspx?id='" + getTop[i][0] + "'>Lås tråd</a>";
+                        html += " <a class='item' href='Delete_Topic.aspx?id=" + getTop[i][0] + "'>Slet tråd</a>";
+                        html += "<a class='item' href='Lock_Topic.aspx?id=" + getTop[i][0] + "'>Lås tråd</a>";
                     }
                     else
                     {

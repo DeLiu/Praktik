@@ -18,6 +18,7 @@ public partial class Forum_Delete_Topic : System.Web.UI.Page
             {
                 db.Open();
                 db.Exec("DELETE FROM topics WHERE topic_id =" + Request.QueryString["id"]);
+                db.Exec("DELETE FROM posts WHERE post_topic =" + Request.QueryString["id"]);
             }
             catch (Exception ex)
             {

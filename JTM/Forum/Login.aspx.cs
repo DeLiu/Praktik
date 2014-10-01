@@ -29,12 +29,14 @@ public partial class Forum_Login : System.Web.UI.Page
                     cookie.Values.Add("userlevel", getuser[i][3]);
                     cookie.Expires = DateTime.Now.AddDays(60);
                     Response.Cookies.Add(cookie);
+                    content.InnerHtml = "Du er nu logget ind. Klik <a href='Default.aspx'>her</a> for at vende tilbage til forsiden.";
                 }
                 else
                 {
                     content.InnerHtml = "<p>Forkert kode eller brugernavn prøv igen.</p>";
                 }
             }
+
         }
         catch (Exception ex)
         {
@@ -46,8 +48,6 @@ public partial class Forum_Login : System.Web.UI.Page
             username.Visible = false;
             password.Visible = false;
             Button1.Visible = false;
-
-            content.InnerHtml = "Du er nu logget ind. Klik <a href='Default.aspx'>her</a> for at vende tilbage til forsiden.";
         }
     }
 }
