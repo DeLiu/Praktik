@@ -14,7 +14,7 @@ public partial class _Default : Page
 		{
 			DB.Open();
 			string[][] profileArray = DB.Query("SELECT profile FROM profileinfo WHERE id=1");
-			ProfileContent.InnerHtml = "<p>" + profileArray[0][0] + " TEST!" + "</p>";
+			ProfileContent.InnerHtml = "<p>" + profileArray[0][0] + "</p>";
 		}
 		catch (Exception ex)
 		{

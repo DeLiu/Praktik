@@ -70,22 +70,13 @@
                         <li><a runat="server" href="~/Produktside">Produkter</a></li>
                         <li><a runat="server" href="~/Contact">Kontakt</a></li>
                     </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Opret bruger</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log ind</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Velkommen, <%: Context.User.Identity.GetUserName()  %>!</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log af" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                    <div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a id="loggedout" runat="server" href="~/Account/Login">Log ind</a></li>
+                            <li>
+                                <asp:LinkButton ID="loggedin" OnClick="LogOut" runat="server">Log ud</asp:LinkButton></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

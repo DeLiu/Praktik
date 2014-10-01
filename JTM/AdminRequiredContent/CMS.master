@@ -14,22 +14,10 @@
         <div class="nav-wrapper">
             <div class="navbarHorizontalMenu">
                 <h1 style="color: #284E98;">Administration</h1>
-
-                    <asp:LoginView runat="server">
-                        <AnonymousTemplate>
-                            <div class="loginBox">
-                                <a runat="server" href="~/Account/Login.aspx">Log ind</a>
-                            </div>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <div class="loginBox">
-                                <asp:LoginStatus runat="server" LogoutAction="RedirectToLoginPage" LogoutText="Log ud" LogoutPageUrl="~/" OnLoggingOut="Log_out" />
-                            </div>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-    
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-    
+                <div class="loginBox">
+                    <a id="loggedout" runat="server" href="~/Account/Login.aspx">Log ind</a>
+                    <asp:LinkButton ID="loggedin" OnClick="LogOut" runat="server">Log ud</asp:LinkButton>
+                </div>
             </div>
             <div class="navbarMenu">
                 <asp:Menu ID="Menu1" runat="server" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" StaticSubMenuIndent="10px" Width="90%">

@@ -28,23 +28,32 @@ public partial class Account_Login : Page
                 SQLDatabase DB = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
 
                 string[][] userlog = new string[0][];
+                bool loginConfirm = false;
 
                 try
                 {
                     DB.Open();
                     userlog = DB.Query("SELECT user_name, user_pass, userlevel FROM Users WHERE user_name='" + UserName.Text + "'");
 
-                    if ((PasswordHash.ValidatePassword(Password.Text, userlog[0][1]) == true) && (userlog[0][2] == "0"))
+                    if (userlog[0].GetLength(0) != null)
                     {
-                        Session.Add("User", userlog[0][0]);
-                        Session.Add("Pass", userlog[0][1]);
-                        Session.Add("level", userlog[0][2]);
-                        Session.Timeout = 5;
-                        
+                        if ((PasswordHash.ValidatePassword(Password.Text, userlog[0][1]) == true) && (userlog[0][2] == "0"))
+                        {
+                            Session.Add("User", userlog[0][0]);
+                            Session.Add("Pass", userlog[0][1]);
+                            Session.Add("level", userlog[0][2]);
+                            Session.Timeout = 5;
+                            loginConfirm = true;
+                        }
+                        else
+                        {
+                            FailureText.Text = "Forkert kode eller brugernavn prøv igen.";
+                            ErrorMessage.Visible = true;
+                        }
                     }
                     else
                     {
-                        FailureText.Text = "Forkert kode eller brugernavn prøv igen.";
+                        FailureText.Text = "Brugeren eksistere ikke.";
                         ErrorMessage.Visible = true;
                     }
                 }
@@ -54,7 +63,7 @@ public partial class Account_Login : Page
                 {
                     DB.Close();
 
-                    if ((PasswordHash.ValidatePassword(Password.Text, userlog[0][1]) == true) && (userlog[0][2] == "0"))
+                    if (loginConfirm == true)
                     {
                         Response.Redirect("~/AdminRequiredContent/Default.aspx");
                     }
