@@ -21,6 +21,7 @@ public partial class Forum_Create_Topic : System.Web.UI.Page
             {
                 db.Open();
                 db.Exec("INSERT INTO topics (topic_subject, topic_date, topic_cat, topic_by, topic_locked) VALUES('" + txtEmne.Text + "', GETDATE(), " + Request.QueryString["id"] + ", " + Request.Cookies["forumcookie"]["userid"] + ", 0)");
+                //db.Exec("INSERT INTO posts (post_content, post_date, post_topic, post_by) VALUES ('" + txtContent.Text + "', GETDATE(), " + Request.QueryString["id"] + ", " + Request.Cookies["forumcookie"]["userid"]+")");
             }
             catch (Exception ex)
             {
@@ -29,6 +30,7 @@ public partial class Forum_Create_Topic : System.Web.UI.Page
             finally
             {
                 db.Close();
+                Response.Redirect("Category.aspx?id=" + Request.QueryString["id"]);
             }
         }
         else
