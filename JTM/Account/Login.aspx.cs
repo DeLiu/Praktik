@@ -27,19 +27,20 @@ public partial class Account_Login : Page
             {
                 SQLDatabase DB = new SQLDatabase("ForumDB.mdf", "LocalDB", "", "");
 
+                string[][] userlog = new string[0][];
+
                 try
                 {
                     DB.Open();
-                    string[][] userlog = DB.Query("SELECT user_name, user_pass, userlevel FROM Users WHERE user_name='" + UserName.Text + "'");
+                    userlog = DB.Query("SELECT user_name, user_pass, userlevel FROM Users WHERE user_name='" + UserName.Text + "'");
 
-                    if (PasswordHash.ValidatePassword(Password.Text, userlog[0][1]) == true)
+                    if ((PasswordHash.ValidatePassword(Password.Text, userlog[0][1]) == true) && (userlog[0][2] == "0"))
                     {
                         Session.Add("User", userlog[0][0]);
                         Session.Add("Pass", userlog[0][1]);
                         Session.Add("level", userlog[0][2]);
                         Session.Timeout = 5;
-                        //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                        //Response.Redirect(Request.UrlReferrer.ToString());
+                        
                     }
                     else
                     {
@@ -52,6 +53,12 @@ public partial class Account_Login : Page
                 finally
                 {
                     DB.Close();
+
+                    if ((PasswordHash.ValidatePassword(Password.Text, userlog[0][1]) == true) && (userlog[0][2] == "0"))
+                    {
+                        Response.Redirect("~/AdminRequiredContent/Default.aspx");
+                    }
+                    
                 }
             }
 
