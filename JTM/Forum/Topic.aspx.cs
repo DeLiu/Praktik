@@ -35,10 +35,10 @@ public partial class Forum_Topic : System.Web.UI.Page
                     {
                         html += " <a class='item' href='Delete_Reply.aspx?id=" + getPos[i][4] + "'>Slet indlæg</a>";
                     }
-                    else
-                    {
-                        html += "</th>";
-                    }
+                }
+                else
+                {
+                    html += "</th>";
                 }
                 html += "</tr>";
                 html += "<tr>";
