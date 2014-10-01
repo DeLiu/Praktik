@@ -20,9 +20,11 @@ public class Statistik
 	}
 
     /// <summary>
-    /// Adds an SHA256 encrypted IP to the database.
+    /// Adds an SHA256 encrypted IP and browser information to the database.
     /// </summary>
     /// <param name="ip">The IP which you want added to the database.</param>
+    /// <param name="browserVersion">The version of the users browser.</param>
+    /// <param name="browserPlatform">The users platform. e.g. WinNT.</param>
     
     public void Add(string ip, string browserName, string browserVersion, string browserPlatform)
     {
